@@ -1,8 +1,10 @@
 library ifarms_theme;
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:ifarms_theme/screen_util.dart';
+export 'package:flutter_svg/flutter_svg.dart';
+export 'package:flutter_screenutil/flutter_screenutil.dart';
 part 'src/ifarms_textstyles.dart';
 part 'src/ifarms_colors.dart';
 part 'src/ifarms_buttons.dart';
