@@ -29,6 +29,7 @@ enum ButtonMode {
   circle,
   rounded,
   iconLabel,
+  large,
 }
 
 enum ButtonIconPosition {

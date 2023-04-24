@@ -66,7 +66,7 @@ class IFButton {
         );
       default:
         return SizedBox(
-          height: 45,
+          height: mode == ButtonMode.large ? 70 : 45,
           child: MaterialButton(
             minWidth: 45,
             elevation: 0,
@@ -91,7 +91,9 @@ class IFButton {
                   ),
                 Text(
                   label!,
-                  style: _textStyle(type),
+                  style: mode == ButtonMode.large
+                      ? IFTheme.textStyle.h2Reg
+                      : _textStyle(type),
                 ),
                 if (iconPosition == ButtonIconPosition.right)
                   Padding(

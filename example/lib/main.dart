@@ -153,6 +153,33 @@ class _MyHomePageState extends State<MyHomePage> {
                           child: Row(
                             children: [
                               IFTheme.button.baseButton(
+                                label: 'Large No Outline',
+                                type: ButtonType.outline,
+                                noBorder: true,
+                                mode: ButtonMode.large,
+                                iconPosition: ButtonIconPosition.left,
+                              ),
+                              IFTheme.button.baseButton(
+                                label: 'Large Outline',
+                                type: ButtonType.outline,
+                                mode: ButtonMode.large,
+                                iconPosition: ButtonIconPosition.right,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 10),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          child: Row(
+                            children: [
+                              IFTheme.button.baseButton(
                                 type: ButtonType.primary,
                                 icon: SvgPicture.asset(
                                   'assets/svg/plus_outlined.svg',
