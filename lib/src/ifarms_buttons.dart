@@ -13,15 +13,6 @@ class IFButton {
     if (onPressed == null && type != ButtonType.disabled) {
       onPressed = () {};
     }
-    if (icon == null && iconPosition != null) {
-      icon = SvgPicture.asset(
-        'assets/svgs/plus_outlined.svg',
-        colorFilter: ColorFilter.mode(
-          _iconColor(type),
-          BlendMode.srcIn,
-        ),
-      );
-    }
     switch (mode) {
       case ButtonMode.circle:
         return SizedBox.fromSize(
@@ -113,16 +104,6 @@ class IFButton {
           ),
         );
     }
-  }
-
-  Widget setDefaultIcon() {
-    return SvgPicture.asset(
-      'assets/svgs/plus_outlined.svg',
-      colorFilter: ColorFilter.mode(
-        IFTheme.color.white,
-        BlendMode.srcIn,
-      ),
-    );
   }
 
   Color _buttonColor(ButtonType type) {
