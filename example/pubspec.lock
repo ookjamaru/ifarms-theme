@@ -94,9 +94,11 @@ packages:
   ifarms_theme:
     dependency: "direct main"
     description:
-      path: ".."
-      relative: true
-    source: path
+      path: "."
+      ref: master
+      resolved-ref: c793a955844b07ee8e8d30e6a3728be11a310f7d
+      url: "https://github.com/renaldi1050/ifarms-theme.git"
+    source: git
     version: "0.0.1"
   js:
     dependency: transitive

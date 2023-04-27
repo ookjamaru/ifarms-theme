@@ -10,7 +10,9 @@ dependencies:
   flutter:
     sdk: flutter
   ifarms_theme:
-    path: ../
+    git: 
+      url: https://github.com/renaldi1050/ifarms-theme.git
+      ref: master
   flutter_svg: ^2.0.5
 
 dev_dependencies:

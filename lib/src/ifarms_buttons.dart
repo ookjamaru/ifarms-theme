@@ -5,7 +5,7 @@ class IFButton {
     String? label = '-',
     required ButtonType type,
     ButtonMode? mode = ButtonMode.common,
-    ButtonIconPosition? iconPosition = ButtonIconPosition.left,
+    ButtonIconPosition? iconPosition,
     Widget? icon,
     bool noBorder = false,
     VoidCallback? onPressed,
