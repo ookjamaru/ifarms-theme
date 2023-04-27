@@ -127,6 +127,8 @@ class IFButton {
         return IFTheme.color.red;
       case ButtonType.success:
         return IFTheme.color.green;
+      case ButtonType.text:
+        return IFTheme.color.white.withAlpha(0);
       case ButtonType.disabled:
         return IFTheme.color.grey;
       default:
