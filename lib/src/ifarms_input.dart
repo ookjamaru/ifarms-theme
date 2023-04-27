@@ -46,7 +46,9 @@ class IFInput {
             fillColor: enabled! ? IFTheme.color.white : IFTheme.color.lightGrey,
             labelStyle: TextStyle(color: IFTheme.color.black),
             hintText: hint,
-            hintStyle: IFTheme.textStyle.h2Reg,
+            hintStyle: IFTheme.textStyle.h2Reg.copyWith(
+              color: IFTheme.color.grey,
+            ),
             contentPadding: const EdgeInsets.all(15.0),
             errorStyle: IFTheme.textStyle.smallReg.copyWith(
               color: IFTheme.color.red,
