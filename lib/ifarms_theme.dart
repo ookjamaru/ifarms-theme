@@ -46,6 +46,12 @@ enum DialogType {
   danger,
 }
 
+enum SuffixType {
+  clearButton,
+  widget,
+  noSuffix,
+}
+
 class IFTheme {
   static IFTextStyles textStyle = IFTextStyles();
   static IFColor color = IFColor();

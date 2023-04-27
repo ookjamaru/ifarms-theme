@@ -6,14 +6,17 @@ class IFInput {
     String? hint,
     String? initialValue,
     String? prefixIcon = 'assets/svgs/note_tracking.svg',
+    String? suffixIcon,
     TextEditingController? controller,
     FormFieldValidator? validator,
     bool? longText = false,
     bool? showPrefix = false,
+    bool? showSuffix = false,
     bool? showClearbutton = false,
     bool? readOnly = false,
     bool? enabled = true,
     bool? required = true,
+    Function()? suffixAction,
     TextInputType? inputType = TextInputType.text,
   }) {
     return Column(
@@ -75,11 +78,13 @@ class IFInput {
                     ),
                   )
                 : null,
-            suffixIcon: showClearbutton!
+            suffixIcon: showSuffix!
                 ? IconButton(
-                    onPressed: () => controller?.clear(),
+                    onPressed: () => suffixAction,
                     icon: SvgPicture.asset(
-                      'assets/svgs/close-circle.svg',
+                      showClearbutton!
+                          ? 'assets/svgs/close-circle.svg'
+                          : suffixIcon!,
                       height: ScreenUtil().setHeight(20),
                       colorFilter: ColorFilter.mode(
                         IFTheme.color.grey,
