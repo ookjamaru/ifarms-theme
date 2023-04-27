@@ -20,6 +20,7 @@ enum ButtonType {
   outline,
   outlineGreen,
   outlineRed,
+  text,
   disabled,
 }
 
