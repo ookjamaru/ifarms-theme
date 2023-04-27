@@ -1,6 +1,7 @@
 part of '../ifarms_theme.dart';
 
 class IFColor {
+  Color background = const Color(0xFFF9FBFA); //##F9FBFA
   Color black = const Color(0xFF332C2B); //#332C2B
   Color blue = const Color(0xFF3473AE); //#3473AE
   Color lightGrey = const Color(0xFFDFDFDF); //#DFDFDF
