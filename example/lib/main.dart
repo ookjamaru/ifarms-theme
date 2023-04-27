@@ -456,6 +456,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               hint: 'This is hint',
                               required: true,
                               showClearbutton: true,
+                              showSuffix: true,
                               validator: (s) =>
                                   IFTheme.validator.nikValidator(s),
                             ),

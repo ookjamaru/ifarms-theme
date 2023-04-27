@@ -84,7 +84,7 @@ class IFInput {
                     icon: SvgPicture.asset(
                       showClearbutton!
                           ? 'assets/svgs/close-circle.svg'
-                          : suffixIcon!,
+                          : suffixIcon ?? 'assets/svgs/close-circle.svg',
                       height: ScreenUtil().setHeight(20),
                       colorFilter: ColorFilter.mode(
                         IFTheme.color.grey,
