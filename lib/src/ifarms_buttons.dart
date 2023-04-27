@@ -37,10 +37,12 @@ class IFButton {
                 _iconColor(type),
               ),
               side: MaterialStateBorderSide.resolveWith(
-                (states) => BorderSide(
-                  color: _outlineColor(type),
-                  width: noBorder ? 0 : 1,
-                ),
+                (states) => noBorder
+                    ? BorderSide.none
+                    : BorderSide(
+                        color: _outlineColor(type),
+                        width: 1,
+                      ),
               ),
             ),
           ),
@@ -56,10 +58,12 @@ class IFButton {
             foregroundColor: _iconColor(type),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
-              side: BorderSide(
-                color: _outlineColor(type),
-                width: noBorder ? 0 : 1,
-              ),
+              side: noBorder
+                  ? BorderSide.none
+                  : BorderSide(
+                      color: _outlineColor(type),
+                      width: 1,
+                    ),
             ),
             child: icon,
           ),
@@ -76,10 +80,12 @@ class IFButton {
             disabledColor: _buttonColor(type),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
-              side: BorderSide(
-                color: _outlineColor(type),
-                width: noBorder ? 0 : 1,
-              ),
+              side: noBorder
+                  ? BorderSide.none
+                  : BorderSide(
+                      color: _outlineColor(type),
+                      width: 1,
+                    ),
             ),
             onPressed: onPressed,
             child: Row(
