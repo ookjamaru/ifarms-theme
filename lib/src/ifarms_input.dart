@@ -68,7 +68,7 @@ class IFInput {
                         ),
                       ),
                       child: SvgPicture.asset(
-                        prefixIcon!,
+                        prefixIcon ?? '',
                         height: ScreenUtil().setHeight(20),
                         width: ScreenUtil().setWidth(20),
                         colorFilter: ColorFilter.mode(
