@@ -5,7 +5,7 @@ class IFInput {
     String? title,
     String? hint,
     String? initialValue,
-    String? prefixIcon = 'assets/svgs/note_tracking.svg',
+    String? prefixIcon = 'assets/svgs/note-tracking.svg',
     String? suffixIcon,
     TextEditingController? controller,
     FormFieldValidator? validator,

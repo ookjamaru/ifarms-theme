@@ -185,7 +185,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   IFTheme.button.baseButton(
                                     type: ButtonType.primary,
                                     icon: SvgPicture.asset(
-                                      'assets/svgs/plus_outlined.svg',
+                                      'assets/svgs/plus-outlined.svg',
                                       colorFilter: ColorFilter.mode(
                                         IFTheme.color.white,
                                         BlendMode.srcIn,
@@ -196,7 +196,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   IFTheme.button.baseButton(
                                     type: ButtonType.success,
                                     icon: SvgPicture.asset(
-                                      'assets/svgs/plus_outlined.svg',
+                                      'assets/svgs/plus-outlined.svg',
                                       colorFilter: ColorFilter.mode(
                                         IFTheme.color.white,
                                         BlendMode.srcIn,
@@ -207,7 +207,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   IFTheme.button.baseButton(
                                     type: ButtonType.warning,
                                     icon: SvgPicture.asset(
-                                      'assets/svgs/plus_outlined.svg',
+                                      'assets/svgs/plus-outlined.svg',
                                       colorFilter: ColorFilter.mode(
                                         IFTheme.color.white,
                                         BlendMode.srcIn,
@@ -219,7 +219,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                     label: 'Danger',
                                     type: ButtonType.danger,
                                     icon: SvgPicture.asset(
-                                      'assets/svgs/plus_outlined.svg',
+                                      'assets/svgs/plus-outlined.svg',
                                       colorFilter: ColorFilter.mode(
                                         IFTheme.color.white,
                                         BlendMode.srcIn,
@@ -230,7 +230,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   IFTheme.button.baseButton(
                                     type: ButtonType.outline,
                                     icon: SvgPicture.asset(
-                                      'assets/svgs/plus_outlined.svg',
+                                      'assets/svgs/plus-outlined.svg',
                                       colorFilter: ColorFilter.mode(
                                         IFTheme.color.blue,
                                         BlendMode.srcIn,
@@ -241,7 +241,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   IFTheme.button.baseButton(
                                     type: ButtonType.outlineGreen,
                                     icon: SvgPicture.asset(
-                                      'assets/svgs/plus_outlined.svg',
+                                      'assets/svgs/plus-outlined.svg',
                                       colorFilter: ColorFilter.mode(
                                         IFTheme.color.blue,
                                         BlendMode.srcIn,
@@ -252,7 +252,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   IFTheme.button.baseButton(
                                     type: ButtonType.outlineRed,
                                     icon: SvgPicture.asset(
-                                      'assets/svgs/plus_outlined.svg',
+                                      'assets/svgs/plus-outlined.svg',
                                       colorFilter: ColorFilter.mode(
                                         IFTheme.color.blue,
                                         BlendMode.srcIn,
@@ -263,7 +263,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   IFTheme.button.baseButton(
                                     type: ButtonType.disabled,
                                     icon: SvgPicture.asset(
-                                      'assets/svgs/plus_outlined.svg',
+                                      'assets/svgs/plus-outlined.svg',
                                       colorFilter: ColorFilter.mode(
                                         IFTheme.color.white,
                                         BlendMode.srcIn,
