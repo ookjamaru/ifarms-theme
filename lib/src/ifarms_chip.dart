@@ -4,7 +4,7 @@ class IFChip {
   Chip baseChip({
     required bool active,
     required String label,
-    String? deleteIcon,
+    String? deleteIcon = 'assets/svgs/close-circle.svg',
     VoidCallback? onDelete,
   }) {
     onDelete ??= () {};

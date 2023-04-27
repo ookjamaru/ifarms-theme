@@ -13,6 +13,15 @@ class IFButton {
     if (onPressed == null && type != ButtonType.disabled) {
       onPressed = () {};
     }
+    if (icon == null && iconPosition != null) {
+      icon = SvgPicture.asset(
+        'assets/svg/plus_outlined.svg',
+        colorFilter: ColorFilter.mode(
+          _iconColor(type),
+          BlendMode.srcIn,
+        ),
+      );
+    }
     switch (mode) {
       case ButtonMode.circle:
         return SizedBox.fromSize(
@@ -86,7 +95,7 @@ class IFButton {
                 if (iconPosition == ButtonIconPosition.left)
                   Padding(
                     padding: const EdgeInsets.only(right: 10),
-                    child: icon ?? const SizedBox.shrink(),
+                    child: icon!,
                   ),
                 Text(
                   label!,
@@ -97,13 +106,23 @@ class IFButton {
                 if (iconPosition == ButtonIconPosition.right)
                   Padding(
                     padding: const EdgeInsets.only(left: 10),
-                    child: icon ?? const SizedBox.shrink(),
+                    child: icon!,
                   ),
               ],
             ),
           ),
         );
     }
+  }
+
+  Widget setDefaultIcon() {
+    return SvgPicture.asset(
+      'assets/svg/plus_outlined.svg',
+      colorFilter: ColorFilter.mode(
+        IFTheme.color.white,
+        BlendMode.srcIn,
+      ),
+    );
   }
 
   Color _buttonColor(ButtonType type) {
