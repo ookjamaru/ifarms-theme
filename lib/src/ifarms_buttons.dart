@@ -86,7 +86,7 @@ class IFButton {
                 if (iconPosition == ButtonIconPosition.left)
                   Padding(
                     padding: const EdgeInsets.only(right: 10),
-                    child: icon!,
+                    child: icon ?? const SizedBox.shrink(),
                   ),
                 Text(
                   label!,
@@ -97,7 +97,7 @@ class IFButton {
                 if (iconPosition == ButtonIconPosition.right)
                   Padding(
                     padding: const EdgeInsets.only(left: 10),
-                    child: icon!,
+                    child: icon ?? const SizedBox.shrink(),
                   ),
               ],
             ),
