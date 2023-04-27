@@ -15,7 +15,7 @@ class IFButton {
     }
     if (icon == null && iconPosition != null) {
       icon = SvgPicture.asset(
-        'assets/svg/plus_outlined.svg',
+        'assets/svgs/plus_outlined.svg',
         colorFilter: ColorFilter.mode(
           _iconColor(type),
           BlendMode.srcIn,
@@ -117,7 +117,7 @@ class IFButton {
 
   Widget setDefaultIcon() {
     return SvgPicture.asset(
-      'assets/svg/plus_outlined.svg',
+      'assets/svgs/plus_outlined.svg',
       colorFilter: ColorFilter.mode(
         IFTheme.color.white,
         BlendMode.srcIn,

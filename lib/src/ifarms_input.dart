@@ -5,7 +5,7 @@ class IFInput {
     String? title,
     String? hint,
     String? initialValue,
-    String? prefixIcon = 'assets/svg/note_tracking.svg',
+    String? prefixIcon = 'assets/svgs/note_tracking.svg',
     TextEditingController? controller,
     FormFieldValidator? validator,
     bool? longText = false,
@@ -77,7 +77,7 @@ class IFInput {
                 ? IconButton(
                     onPressed: () => controller?.clear(),
                     icon: SvgPicture.asset(
-                      'assets/svg/close_circle.svg',
+                      'assets/svgs/close-circle.svg',
                       height: ScreenUtil().setHeight(20),
                       colorFilter: ColorFilter.mode(
                         IFTheme.color.grey,

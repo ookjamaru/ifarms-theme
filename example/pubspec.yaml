@@ -21,7 +21,8 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - assets/svg/
+    - assets/svgs/
+    - assets/images/
   fonts:
     - family: DM Sans
       fonts:

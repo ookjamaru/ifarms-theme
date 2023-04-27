@@ -11,6 +11,7 @@ part 'src/ifarms_dialogs.dart';
 part 'src/ifarms_chip.dart';
 part 'src/ifarms_input.dart';
 part 'src/ifarms_utils.dart';
+part 'src/ifarms_assets.dart';
 
 enum ButtonType {
   primary,
@@ -55,6 +56,7 @@ class IFTheme {
   static IFInput input = IFInput();
   static IFFormValidator validator = IFFormValidator();
   static IFUtils utils = IFUtils();
+  static IFAssets assets = IFAssets();
 }
 
 class IFFormValidator {
