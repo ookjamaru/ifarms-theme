@@ -20,10 +20,3 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-  assets:
-      - assets/svgs/
-      - assets/images/
-  fonts:
-      - family: DM Sans
-        fonts:
-          - asset: assets/fonts/DMSans-Regular.ttf
