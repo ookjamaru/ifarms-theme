@@ -47,7 +47,7 @@ enum DialogType {
 }
 
 enum SuffixType {
-  clearButton,
+  svg,
   widget,
   noSuffix,
 }

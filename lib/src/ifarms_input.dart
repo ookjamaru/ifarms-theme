@@ -7,8 +7,10 @@ class IFInput {
     String? initialValue,
     String? prefixIcon = 'assets/svgs/note-tracking.svg',
     String? suffixIcon,
+    Widget? suffixWidget,
     TextEditingController? controller,
     FormFieldValidator? validator,
+    SuffixType? suffixType = SuffixType.noSuffix,
     bool? longText = false,
     bool? showPrefix = false,
     bool? showSuffix = false,
@@ -81,21 +83,12 @@ class IFInput {
                       ),
                     )
                   : null,
-              suffixIcon: showSuffix!
-                  ? IconButton(
-                      onPressed: () => suffixAction,
-                      icon: SvgPicture.asset(
-                        showClearbutton!
-                            ? 'assets/svgs/close-circle.svg'
-                            : suffixIcon ?? 'assets/svgs/close-circle.svg',
-                        height: ScreenUtil().setHeight(20),
-                        colorFilter: ColorFilter.mode(
-                          IFTheme.color.grey,
-                          BlendMode.srcIn,
-                        ),
-                      ),
-                    )
-                  : null,
+              suffixIcon: suffixBuilder(
+                type: suffixType,
+                asset: suffixIcon,
+                widget: suffixWidget,
+                suffixAction: suffixAction,
+              ),
               alignLabelWithHint: true,
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10.0),
@@ -122,5 +115,31 @@ class IFInput {
         ],
       ),
     );
+  }
+
+  suffixBuilder({
+    SuffixType? type,
+    String? asset,
+    Widget? widget,
+    Function()? suffixAction,
+  }) {
+    switch (type) {
+      case SuffixType.svg:
+        return IconButton(
+          onPressed: () => suffixAction,
+          icon: SvgPicture.asset(
+            asset ?? 'assets/svgs/close-circle.svg',
+            height: ScreenUtil().setHeight(20),
+            colorFilter: ColorFilter.mode(
+              IFTheme.color.grey,
+              BlendMode.srcIn,
+            ),
+          ),
+        );
+      case SuffixType.widget:
+        return widget;
+      default:
+        return null;
+    }
   }
 }
