@@ -194,6 +194,8 @@ class IFButton {
         return IFTheme.color.green;
       case ButtonType.outlineRed:
         return IFTheme.color.red;
+      case ButtonType.text:
+        return IFTheme.color.blue;
       default:
         return IFTheme.color.white;
     }
