@@ -14,7 +14,6 @@ class IFInput {
     bool? obscureText = false,
     bool? longText = false,
     bool? showPrefix = false,
-    bool? showSuffix = false,
     bool? showClearbutton = false,
     bool? readOnly = false,
     bool? enabled = true,
