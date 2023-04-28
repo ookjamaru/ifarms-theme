@@ -3,6 +3,7 @@ part of '../ifarms_theme.dart';
 class IFButton {
   Widget baseButton({
     String? label = '-',
+    String? heroTag = '-',
     required ButtonType type,
     ButtonMode? mode = ButtonMode.common,
     ButtonIconPosition? iconPosition,
@@ -53,6 +54,7 @@ class IFButton {
         return SizedBox.fromSize(
           size: const Size(45, 45),
           child: FloatingActionButton(
+            heroTag: heroTag,
             mini: true,
             elevation: 0,
             onPressed: onPressed,
