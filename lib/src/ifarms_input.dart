@@ -11,6 +11,7 @@ class IFInput {
     TextEditingController? controller,
     FormFieldValidator? validator,
     SuffixType? suffixType = SuffixType.noSuffix,
+    bool? obscureText = false,
     bool? longText = false,
     bool? showPrefix = false,
     bool? showSuffix = false,
@@ -48,6 +49,7 @@ class IFInput {
             validator: validator,
             readOnly: readOnly!,
             enabled: enabled,
+            obscureText: obscureText!,
             decoration: InputDecoration(
               filled: true,
               fillColor:
