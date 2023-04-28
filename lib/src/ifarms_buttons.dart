@@ -80,8 +80,8 @@ class IFButton {
           child: MaterialButton(
             minWidth: 45,
             elevation: 0,
-            color: type == ButtonType.text
-                ? Colors.transparent
+            color: mode == ButtonMode.text
+                ? IFTheme.color.white.withAlpha(9)
                 : _buttonColor(type!),
             disabledColor: _buttonColor(type!),
             shape: RoundedRectangleBorder(
@@ -194,8 +194,6 @@ class IFButton {
         return IFTheme.color.green;
       case ButtonType.outlineRed:
         return IFTheme.color.red;
-      case ButtonType.text:
-        return IFTheme.color.blue;
       default:
         return IFTheme.color.white;
     }
