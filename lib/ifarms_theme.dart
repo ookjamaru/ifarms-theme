@@ -30,6 +30,7 @@ enum ButtonMode {
   circle,
   rounded,
   iconLabel,
+  text,
   large,
 }
 

@@ -78,7 +78,7 @@ class IFButton {
           child: MaterialButton(
             minWidth: 45,
             elevation: 0,
-            color: type == ButtonType.text
+            color: mode == ButtonMode.text
                 ? IFTheme.color.white.withAlpha(9)
                 : _buttonColor(type),
             disabledColor: _buttonColor(type),
