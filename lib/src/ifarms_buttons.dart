@@ -7,7 +7,7 @@ class IFButton {
     ButtonType? type = ButtonType.primary,
     ButtonMode? mode = ButtonMode.common,
     ButtonIconPosition? iconPosition,
-    Widget? icon,
+    Widget? icon = const SizedBox.shrink(),
     bool noBorder = false,
     VoidCallback? onPressed,
   }) {
