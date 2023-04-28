@@ -41,7 +41,7 @@ class IFInput {
           ),
           // Test
           TextFormField(
-            maxLines: 5,
+            maxLines: obscureText! ? 1 : 5,
             minLines: longText! ? 5 : 1,
             controller: controller,
             initialValue: initialValue,
@@ -49,7 +49,7 @@ class IFInput {
             validator: validator,
             readOnly: readOnly!,
             enabled: enabled,
-            obscureText: obscureText!,
+            obscureText: obscureText,
             decoration: InputDecoration(
               filled: true,
               fillColor:
