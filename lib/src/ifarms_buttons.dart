@@ -31,7 +31,7 @@ class IFButton {
             icon: icon!,
             style: ButtonStyle(
               backgroundColor: MaterialStateProperty.all(
-                mode == ButtonMode.text
+                type == ButtonType.text
                     ? Colors.transparent
                     : _buttonColor(type),
               ),
@@ -56,7 +56,7 @@ class IFButton {
             mini: true,
             elevation: 0,
             onPressed: onPressed,
-            backgroundColor: mode == ButtonMode.text
+            backgroundColor: type == ButtonType.text
                 ? Colors.transparent
                 : _buttonColor(type),
             foregroundColor: _iconColor(type),
@@ -78,7 +78,7 @@ class IFButton {
           child: MaterialButton(
             minWidth: 45,
             elevation: 0,
-            color: mode == ButtonMode.text
+            color: type == ButtonType.text
                 ? IFTheme.color.white.withAlpha(9)
                 : _buttonColor(type),
             disabledColor: _buttonColor(type),
