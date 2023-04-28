@@ -55,6 +55,7 @@ class IFDialog {
                 child: IFTheme.button.baseButton(
                   label: confirmLabel!,
                   type: _confirmButtonType(type!),
+                  onPressed: onConfirm,
                 ),
               )
             ],
