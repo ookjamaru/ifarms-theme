@@ -4,7 +4,7 @@ class IFButton {
   Widget baseButton({
     String? label = '-',
     String? heroTag = '-',
-    required ButtonType type,
+    ButtonType? type = ButtonType.primary,
     ButtonMode? mode = ButtonMode.common,
     ButtonIconPosition? iconPosition,
     Widget? icon,
@@ -18,7 +18,7 @@ class IFButton {
       icon = SvgPicture.asset(
         'assets/svgs/plus-outlined.svg',
         colorFilter: ColorFilter.mode(
-          _iconColor(type),
+          _iconColor(type!),
           BlendMode.srcIn,
         ),
       );
@@ -34,10 +34,10 @@ class IFButton {
               backgroundColor: MaterialStateProperty.all(
                 type == ButtonType.text
                     ? Colors.transparent
-                    : _buttonColor(type),
+                    : _buttonColor(type!),
               ),
               iconColor: MaterialStateProperty.all(
-                _iconColor(type),
+                _iconColor(type!),
               ),
               side: MaterialStateBorderSide.resolveWith(
                 (states) => noBorder
@@ -60,8 +60,8 @@ class IFButton {
             onPressed: onPressed,
             backgroundColor: type == ButtonType.text
                 ? Colors.transparent
-                : _buttonColor(type),
-            foregroundColor: _iconColor(type),
+                : _buttonColor(type!),
+            foregroundColor: _iconColor(type!),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
               side: noBorder
@@ -82,8 +82,8 @@ class IFButton {
             elevation: 0,
             color: mode == ButtonMode.text
                 ? IFTheme.color.white.withAlpha(9)
-                : _buttonColor(type),
-            disabledColor: _buttonColor(type),
+                : _buttonColor(type!),
+            disabledColor: _buttonColor(type!),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
               side: noBorder
