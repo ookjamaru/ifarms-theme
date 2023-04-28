@@ -31,7 +31,9 @@ class IFButton {
             icon: icon!,
             style: ButtonStyle(
               backgroundColor: MaterialStateProperty.all(
-                _buttonColor(type),
+                mode == ButtonMode.text
+                    ? Colors.transparent
+                    : _buttonColor(type),
               ),
               iconColor: MaterialStateProperty.all(
                 _iconColor(type),
@@ -54,7 +56,9 @@ class IFButton {
             mini: true,
             elevation: 0,
             onPressed: onPressed,
-            backgroundColor: _buttonColor(type),
+            backgroundColor: mode == ButtonMode.text
+                ? Colors.transparent
+                : _buttonColor(type),
             foregroundColor: _iconColor(type),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
