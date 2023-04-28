@@ -80,8 +80,8 @@ class IFButton {
           child: MaterialButton(
             minWidth: 45,
             elevation: 0,
-            color: mode == ButtonMode.text
-                ? IFTheme.color.white.withAlpha(9)
+            color: type == ButtonType.text
+                ? Colors.transparent
                 : _buttonColor(type!),
             disabledColor: _buttonColor(type!),
             shape: RoundedRectangleBorder(
