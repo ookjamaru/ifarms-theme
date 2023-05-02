@@ -13,8 +13,6 @@ class IFButton {
   }) {
     if (onPressed == null && type != ButtonType.disabled) {
       onPressed = () {};
-    } else {
-      onPressed = null;
     }
     if (icon == null && iconPosition != null) {
       icon = SvgPicture.asset(
@@ -83,7 +81,7 @@ class IFButton {
             minWidth: 45,
             elevation: 0,
             color: mode == ButtonMode.text
-                ? Colors.transparent
+                ? IFTheme.color.white.withAlpha(9)
                 : _buttonColor(type!),
             disabledColor: _buttonColor(type!),
             shape: RoundedRectangleBorder(
@@ -181,8 +179,6 @@ class IFButton {
         return IFTheme.textStyle.h2Reg.copyWith(color: IFTheme.color.green);
       case ButtonType.outlineRed:
         return IFTheme.textStyle.h2Reg.copyWith(color: IFTheme.color.red);
-      case ButtonType.text:
-        return IFTheme.textStyle.h2Reg.copyWith(color: IFTheme.color.blue);
       default:
         return IFTheme.textStyle.h2Reg.copyWith(color: IFTheme.color.white);
     }
