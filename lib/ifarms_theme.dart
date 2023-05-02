@@ -8,6 +8,7 @@ part 'src/ifarms_textstyles.dart';
 part 'src/ifarms_colors.dart';
 part 'src/ifarms_buttons.dart';
 part 'src/ifarms_dialogs.dart';
+part 'src/ifarms_bottomsheet.dart';
 part 'src/ifarms_chip.dart';
 part 'src/ifarms_input.dart';
 part 'src/ifarms_utils.dart';
