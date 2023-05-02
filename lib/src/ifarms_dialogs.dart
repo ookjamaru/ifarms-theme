@@ -5,7 +5,6 @@ class IFDialog {
     required BuildContext context,
     String? title = 'Perhatian',
     String? description,
-    String? detail,
     DialogType? type = DialogType.primary,
     String? confirmLabel = 'Ok',
     String? cancelLabel = 'Tutup',
