@@ -83,7 +83,7 @@ class IFButton {
             minWidth: 45,
             elevation: 0,
             color: mode == ButtonMode.text
-                ? IFTheme.color.white.withAlpha(9)
+                ? Colors.transparent
                 : _buttonColor(type!),
             disabledColor: _buttonColor(type!),
             shape: RoundedRectangleBorder(
