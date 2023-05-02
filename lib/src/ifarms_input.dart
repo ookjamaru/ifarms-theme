@@ -127,7 +127,7 @@ class IFInput {
     switch (type) {
       case SuffixType.svg:
         return IconButton(
-          onPressed: () => suffixAction,
+          onPressed: suffixAction,
           icon: SvgPicture.asset(
             asset ?? 'assets/svgs/close-circle.svg',
             height: ScreenUtil().setHeight(20),
