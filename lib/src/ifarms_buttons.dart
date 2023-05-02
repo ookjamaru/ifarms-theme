@@ -13,6 +13,8 @@ class IFButton {
   }) {
     if (onPressed == null && type != ButtonType.disabled) {
       onPressed = () {};
+    } else {
+      onPressed = null;
     }
     if (icon == null && iconPosition != null) {
       icon = SvgPicture.asset(
