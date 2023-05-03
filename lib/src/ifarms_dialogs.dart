@@ -13,6 +13,7 @@ class IFDialog {
     VoidCallback? onConfirm,
   }) {
     return AlertDialog(
+      insetPadding: const EdgeInsets.symmetric(horizontal: 20),
       backgroundColor: IFTheme.color.white,
       surfaceTintColor: IFTheme.color.white,
       iconPadding: const EdgeInsets.only(
