@@ -9,6 +9,7 @@ class IFDialog {
     String? confirmLabel = 'Ok',
     String? cancelLabel = 'Tutup',
     String? customIcon,
+    VoidCallback? onCancel,
     VoidCallback? onConfirm,
   }) {
     return AlertDialog(
@@ -49,7 +50,7 @@ class IFDialog {
                 child: IFTheme.button.baseButton(
                   label: cancelLabel!,
                   type: ButtonType.outline,
-                  onPressed: () => Navigator.pop(context),
+                  onPressed: onCancel ?? () => Navigator.pop(context),
                 ),
               ),
               SizedBox(
