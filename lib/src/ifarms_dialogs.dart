@@ -8,7 +8,7 @@ class IFDialog {
     DialogType? type = DialogType.primary,
     String? confirmLabel = 'Ok',
     String? cancelLabel = 'Tutup',
-    Widget? customIcon = const Icon(Icons.info),
+    String? customIcon,
     VoidCallback? onConfirm,
   }) {
     return AlertDialog(
@@ -27,7 +27,12 @@ class IFDialog {
       alignment: Alignment.center,
       actionsPadding: const EdgeInsets.all(10),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-      icon: customIcon,
+      icon: customIcon != null
+          ? SvgPicture.asset(
+              customIcon,
+              height: ScreenUtil().setHeight(40),
+            )
+          : const SizedBox.shrink(),
       title: Text(title!),
       content: description == null
           ? null
