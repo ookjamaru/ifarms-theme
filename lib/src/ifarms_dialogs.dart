@@ -9,8 +9,8 @@ class IFDialog {
     String? confirmLabel = 'Ok',
     String? cancelLabel = 'Tutup',
     String? customIcon,
-    VoidCallback? onCancel,
-    VoidCallback? onConfirm,
+    Function()? onCancel,
+    Function()? onConfirm,
   }) {
     return AlertDialog(
       insetPadding: const EdgeInsets.symmetric(horizontal: 20),
