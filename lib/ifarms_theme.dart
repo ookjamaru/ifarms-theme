@@ -45,6 +45,7 @@ enum DialogType {
   info,
   warning,
   danger,
+  noAction,
 }
 
 enum SuffixType {

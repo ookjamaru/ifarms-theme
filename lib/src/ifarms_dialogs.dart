@@ -43,7 +43,7 @@ class IFDialog {
               textAlign: TextAlign.center,
             ),
       actions: [
-        if (type != DialogType.info)
+        if (type != DialogType.info && type != DialogType.noAction)
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
