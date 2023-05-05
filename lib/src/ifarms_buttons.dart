@@ -103,12 +103,13 @@ class IFButton {
                     padding: const EdgeInsets.only(right: 10),
                     child: icon!,
                   ),
-                Text(
-                  label!,
-                  style: mode == ButtonMode.large
-                      ? IFTheme.textStyle.h2Reg
-                      : _textStyle(type),
-                ),
+                if (label != null)
+                  Text(
+                    label,
+                    style: mode == ButtonMode.large
+                        ? IFTheme.textStyle.h2Reg
+                        : _textStyle(type),
+                  ),
                 if (iconPosition == ButtonIconPosition.right)
                   Padding(
                     padding: const EdgeInsets.only(left: 10),
