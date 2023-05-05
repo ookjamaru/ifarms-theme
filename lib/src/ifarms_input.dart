@@ -22,6 +22,7 @@ class IFInput {
     TextInputType? inputType = TextInputType.text,
   }) {
     return Material(
+      color: Colors.transparent,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
