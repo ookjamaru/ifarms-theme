@@ -2,7 +2,7 @@ part of '../ifarms_theme.dart';
 
 class IFButton {
   Widget baseButton({
-    String? label = '-',
+    String? label,
     String? heroTag = '-',
     ButtonType? type = ButtonType.primary,
     ButtonMode? mode = ButtonMode.common,
