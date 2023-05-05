@@ -38,6 +38,7 @@ enum ButtonMode {
 enum ButtonIconPosition {
   left,
   right,
+  center,
 }
 
 enum DialogType {

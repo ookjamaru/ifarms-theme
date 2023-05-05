@@ -110,6 +110,11 @@ class IFButton {
                         ? IFTheme.textStyle.h2Reg
                         : _textStyle(type),
                   ),
+                if (iconPosition == ButtonIconPosition.center)
+                  Padding(
+                    padding: const EdgeInsets.all(5),
+                    child: icon!,
+                  ),
                 if (iconPosition == ButtonIconPosition.right)
                   Padding(
                     padding: const EdgeInsets.only(left: 10),
