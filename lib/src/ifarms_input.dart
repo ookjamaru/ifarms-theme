@@ -18,6 +18,7 @@ class IFInput {
     bool? readOnly = false,
     bool? enabled = true,
     bool? required = true,
+    EdgeInsetsGeometry? suffixPadding = EdgeInsets.zero,
     Function()? suffixAction,
     TextInputType? inputType = TextInputType.text,
   }) {
@@ -65,7 +66,7 @@ class IFInput {
               ),
               prefixIcon: showPrefix!
                   ? Padding(
-                      padding: const EdgeInsets.only(right: 10),
+                      padding: suffixPadding!,
                       child: Container(
                         padding: EdgeInsets.all(ScreenUtil().setSp(15)),
                         decoration: BoxDecoration(
@@ -73,13 +74,16 @@ class IFInput {
                             right: BorderSide(color: IFTheme.color.lightGrey),
                           ),
                         ),
-                        child: SvgPicture.asset(
-                          prefixIcon!,
-                          height: ScreenUtil().setHeight(20),
-                          width: ScreenUtil().setWidth(20),
-                          colorFilter: ColorFilter.mode(
-                            IFTheme.color.blue,
-                            BlendMode.srcIn,
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: SvgPicture.asset(
+                            prefixIcon!,
+                            height: ScreenUtil().setHeight(20),
+                            width: ScreenUtil().setWidth(20),
+                            colorFilter: ColorFilter.mode(
+                              IFTheme.color.blue,
+                              BlendMode.srcIn,
+                            ),
                           ),
                         ),
                       ),
