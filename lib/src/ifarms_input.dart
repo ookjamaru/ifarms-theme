@@ -66,7 +66,7 @@ class IFInput {
               ),
               prefixIcon: showPrefix!
                   ? Padding(
-                      padding: suffixPadding!,
+                      padding: const EdgeInsets.only(right: 10),
                       child: Container(
                         padding: EdgeInsets.all(ScreenUtil().setSp(15)),
                         decoration: BoxDecoration(
@@ -75,7 +75,7 @@ class IFInput {
                           ),
                         ),
                         child: Padding(
-                          padding: const EdgeInsets.all(8.0),
+                          padding: suffixPadding!,
                           child: SvgPicture.asset(
                             prefixIcon!,
                             height: ScreenUtil().setHeight(20),
