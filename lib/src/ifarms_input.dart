@@ -19,6 +19,8 @@ class IFInput {
     bool? enabled = true,
     bool? required = true,
     Function()? suffixAction,
+    Function()? onTap,
+    Function(String)? onChanged,
     TextInputType? inputType = TextInputType.text,
   }) {
     return Material(
@@ -49,6 +51,8 @@ class IFInput {
             validator: validator,
             readOnly: readOnly!,
             enabled: enabled,
+            onTap: onTap,
+            onChanged: onChanged,
             obscureText: obscureText,
             decoration: InputDecoration(
               filled: true,
