@@ -8,6 +8,8 @@ class IFInput {
     String? prefixIcon = 'assets/svgs/note-tracking.svg',
     String? suffixIcon,
     Widget? suffixWidget,
+    double? suffixHeight,
+    double? suffixWidth,
     TextEditingController? controller,
     FormFieldValidator? validator,
     SuffixType? suffixType = SuffixType.noSuffix,
@@ -18,7 +20,6 @@ class IFInput {
     bool? readOnly = false,
     bool? enabled = true,
     bool? required = true,
-    EdgeInsetsGeometry? suffixPadding = EdgeInsets.zero,
     Function()? suffixAction,
     TextInputType? inputType = TextInputType.text,
   }) {
@@ -74,16 +75,13 @@ class IFInput {
                             right: BorderSide(color: IFTheme.color.lightGrey),
                           ),
                         ),
-                        child: Padding(
-                          padding: suffixPadding!,
-                          child: SvgPicture.asset(
-                            prefixIcon!,
-                            height: ScreenUtil().setHeight(20),
-                            width: ScreenUtil().setWidth(20),
-                            colorFilter: ColorFilter.mode(
-                              IFTheme.color.blue,
-                              BlendMode.srcIn,
-                            ),
+                        child: SvgPicture.asset(
+                          prefixIcon!,
+                          height: suffixHeight ?? ScreenUtil().setHeight(20),
+                          width: suffixWidth ?? ScreenUtil().setWidth(20),
+                          colorFilter: ColorFilter.mode(
+                            IFTheme.color.blue,
+                            BlendMode.srcIn,
                           ),
                         ),
                       ),
