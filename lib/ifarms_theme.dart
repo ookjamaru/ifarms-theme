@@ -55,6 +55,12 @@ enum SuffixType {
   noSuffix,
 }
 
+enum DialogIconType {
+  svg,
+  widget,
+  none,
+}
+
 class IFTheme {
   static IFTextStyles textStyle = IFTextStyles();
   static IFColor color = IFColor();

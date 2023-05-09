@@ -6,6 +6,7 @@ class IFDialog {
     String? title = 'Perhatian',
     String? description,
     DialogType? type = DialogType.primary,
+    DialogIconType? iconType = DialogIconType.none,
     String? confirmLabel = 'Ok',
     String? cancelLabel = 'Tutup',
     String? customIcon,
@@ -29,12 +30,7 @@ class IFDialog {
       alignment: Alignment.center,
       actionsPadding: const EdgeInsets.all(10),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-      icon: customIcon != null
-          ? SvgPicture.asset(
-              customIcon,
-              height: ScreenUtil().setHeight(40),
-            )
-          : const SizedBox.shrink(),
+      icon: iconBuilder(iconType!),
       title: Text(title!),
       content: description == null
           ? null
@@ -91,6 +87,21 @@ class IFDialog {
         return ButtonType.danger;
       default:
         return ButtonType.primary;
+    }
+  }
+
+  Widget? iconBuilder(DialogIconType type,
+      {String? customIcon, Widget? customWidget}) {
+    switch (type) {
+      case DialogIconType.svg:
+        return SvgPicture.asset(
+          customIcon ?? '',
+          height: ScreenUtil().setHeight(40),
+        );
+      case DialogIconType.widget:
+        return customWidget;
+      default:
+        return const SizedBox.shrink();
     }
   }
 }
