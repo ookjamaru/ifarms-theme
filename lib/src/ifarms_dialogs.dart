@@ -10,6 +10,7 @@ class IFDialog {
     String? confirmLabel = 'Ok',
     String? cancelLabel = 'Tutup',
     String? customIcon,
+    Widget? customIconWidget,
     VoidCallback? onCancel,
     VoidCallback? onConfirm,
   }) {
@@ -30,7 +31,11 @@ class IFDialog {
       alignment: Alignment.center,
       actionsPadding: const EdgeInsets.all(10),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-      icon: iconBuilder(iconType!),
+      icon: iconBuilder(
+        iconType!,
+        customIcon: customIcon,
+        customWidget: customIconWidget,
+      ),
       title: Text(title!),
       content: description == null
           ? null
@@ -90,16 +95,18 @@ class IFDialog {
     }
   }
 
-  Widget? iconBuilder(DialogIconType type,
+  Widget iconBuilder(DialogIconType customIcontype,
       {String? customIcon, Widget? customWidget}) {
-    switch (type) {
+    switch (customIcontype) {
       case DialogIconType.svg:
-        return SvgPicture.asset(
-          customIcon ?? '',
-          height: ScreenUtil().setHeight(40),
-        );
+        return customIcon != null
+            ? SvgPicture.asset(
+                customIcon,
+                height: ScreenUtil().setHeight(40),
+              )
+            : const SizedBox.shrink();
       case DialogIconType.widget:
-        return customWidget;
+        return customWidget ?? const SizedBox.shrink();
       default:
         return const SizedBox.shrink();
     }
