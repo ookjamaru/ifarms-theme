@@ -104,11 +104,11 @@ class IFDialog {
                 customIcon,
                 height: ScreenUtil().setHeight(40),
               )
-            : SvgPicture.asset('assets/svgs/ifarms-logo.svg');
+            : SvgPicture.asset('assets/svgs/info.svg');
       case DialogIconType.widget:
         return customWidget ?? const SizedBox.shrink();
       default:
-        return SvgPicture.asset('assets/svgs/ifarms-logo.svg');
+        return SvgPicture.asset('assets/svgs/info.svg');
     }
   }
 }
