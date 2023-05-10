@@ -104,11 +104,11 @@ class IFDialog {
                 customIcon,
                 height: ScreenUtil().setHeight(40),
               )
-            : const SizedBox.shrink();
+            : const Icon(Icons.info);
       case DialogIconType.widget:
         return customWidget ?? const SizedBox.shrink();
       default:
-        return const SizedBox.shrink();
+        return const Icon(Icons.info);
     }
   }
 }
