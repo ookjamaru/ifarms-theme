@@ -254,6 +254,26 @@ class _MyHomePageState extends State<MyHomePage> {
                       Row(
                         children: [
                           Expanded(
+                            child: IFTheme.button.baseButton(
+                              aligned: true,
+                              label: 'Aligned Button',
+                              type: ButtonType.outline,
+                              iconPosition: ButtonIconPosition.left,
+                              icon: SvgPicture.asset(
+                                'assets/svgs/plus-outlined.svg',
+                                colorFilter: ColorFilter.mode(
+                                  IFTheme.color.blue,
+                                  BlendMode.srcIn,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 10),
+                      Row(
+                        children: [
+                          Expanded(
                             child: SingleChildScrollView(
                               scrollDirection: Axis.horizontal,
                               child: Row(

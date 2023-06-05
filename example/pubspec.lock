@@ -5,10 +5,10 @@ packages:
     dependency: transitive
     description:
       name: args
-      sha256: "4cab82a83ffef80b262ddedf47a0a8e56ee6fbf7fe21e6e768b02792034dd440"
+      sha256: c372bb384f273f0c2a8aaaa226dad84dc27c8519a691b888725dec59518ad53a
       url: "https://pub.dev"
     source: hosted
-    version: "2.4.0"
+    version: "2.4.1"
   async:
     dependency: transitive
     description:
@@ -94,11 +94,9 @@ packages:
   ifarms_theme:
     dependency: "direct main"
     description:
-      path: "."
-      ref: master
-      resolved-ref: c793a955844b07ee8e8d30e6a3728be11a310f7d
-      url: "https://github.com/renaldi1050/ifarms-theme.git"
-    source: git
+      path: ".."
+      relative: true
+    source: path
     version: "0.0.1"
   js:
     dependency: transitive

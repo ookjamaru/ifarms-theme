@@ -9,6 +9,7 @@ class IFButton {
     ButtonIconPosition? iconPosition,
     Widget? icon = const SizedBox.shrink(),
     bool noBorder = false,
+    bool aligned = false,
     VoidCallback? onPressed,
   }) {
     if (onPressed == null && type != ButtonType.disabled) {
@@ -103,6 +104,7 @@ class IFButton {
                     padding: const EdgeInsets.only(right: 10),
                     child: icon!,
                   ),
+                if (aligned) const Spacer(),
                 if (label != null)
                   Text(
                     label,
@@ -110,6 +112,7 @@ class IFButton {
                         ? IFTheme.textStyle.h2Reg
                         : _textStyle(type),
                   ),
+                if (aligned) const Spacer(),
                 if (iconPosition == ButtonIconPosition.center)
                   Padding(
                     padding: const EdgeInsets.all(5),
