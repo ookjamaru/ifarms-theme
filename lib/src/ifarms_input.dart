@@ -11,6 +11,7 @@ class IFInput {
     TextEditingController? controller,
     FormFieldValidator? validator,
     SuffixType? suffixType = SuffixType.noSuffix,
+    int? maxLength,
     bool? obscureText = false,
     bool? longText = false,
     bool? showPrefix = false,
@@ -45,6 +46,7 @@ class IFInput {
           TextFormField(
             maxLines: obscureText! ? 1 : 5,
             minLines: longText! ? 5 : 1,
+            maxLength: maxLength,
             controller: controller,
             initialValue: initialValue,
             keyboardType: inputType,
