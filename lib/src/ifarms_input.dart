@@ -5,7 +5,8 @@ class IFInput {
     String? title,
     String? hint,
     String? initialValue,
-    String? prefixIcon = 'assets/svgs/note-tracking.svg',
+    String? prefixIcon,
+    Widget? prefixWidget,
     String? suffixIcon,
     Widget? suffixWidget,
     TextEditingController? controller,
@@ -21,6 +22,7 @@ class IFInput {
     bool? enabled = true,
     bool? required = true,
     Function()? suffixAction,
+    Function()? prefixAction,
     Function()? onTap,
     Function(String)? onChanged,
     TextInputType? inputType = TextInputType.text,
@@ -72,9 +74,9 @@ class IFInput {
               ),
               prefixIcon: prefixBuilder(
                 type: prefixType,
-                asset: suffixIcon,
-                widget: suffixWidget,
-                suffixAction: suffixAction,
+                asset: prefixIcon,
+                widget: prefixWidget,
+                prefixAction: prefixAction,
               ),
               suffixIcon: suffixBuilder(
                 type: suffixType,
@@ -140,12 +142,12 @@ class IFInput {
     PrefixType? type,
     String? asset,
     Widget? widget,
-    Function()? suffixAction,
+    Function()? prefixAction,
   }) {
     switch (type) {
       case PrefixType.svg:
         return IconButton(
-          onPressed: suffixAction,
+          onPressed: prefixAction,
           icon: SvgPicture.asset(
             asset ?? 'assets/svgs/close-circle.svg',
             height: ScreenUtil().setHeight(20),
