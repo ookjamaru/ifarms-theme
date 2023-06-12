@@ -11,6 +11,7 @@ class IFInput {
     TextEditingController? controller,
     FormFieldValidator? validator,
     SuffixType? suffixType = SuffixType.noSuffix,
+    PrefixType? prefixType = PrefixType.noSuffix,
     int? maxLength,
     bool? obscureText = false,
     bool? longText = false,
@@ -69,28 +70,12 @@ class IFInput {
               errorStyle: IFTheme.textStyle.smallReg.copyWith(
                 color: IFTheme.color.red,
               ),
-              prefixIcon: showPrefix!
-                  ? Padding(
-                      padding: const EdgeInsets.only(right: 10),
-                      child: Container(
-                        padding: EdgeInsets.all(ScreenUtil().setSp(15)),
-                        decoration: BoxDecoration(
-                          border: Border(
-                            right: BorderSide(color: IFTheme.color.lightGrey),
-                          ),
-                        ),
-                        child: SvgPicture.asset(
-                          prefixIcon!,
-                          height: ScreenUtil().setHeight(20),
-                          width: ScreenUtil().setWidth(20),
-                          colorFilter: ColorFilter.mode(
-                            IFTheme.color.blue,
-                            BlendMode.srcIn,
-                          ),
-                        ),
-                      ),
-                    )
-                  : null,
+              prefixIcon: prefixBuilder(
+                type: prefixType,
+                asset: suffixIcon,
+                widget: suffixWidget,
+                suffixAction: suffixAction,
+              ),
               suffixIcon: suffixBuilder(
                 type: suffixType,
                 asset: suffixIcon,
@@ -145,6 +130,32 @@ class IFInput {
           ),
         );
       case SuffixType.widget:
+        return widget;
+      default:
+        return null;
+    }
+  }
+
+  prefixBuilder({
+    PrefixType? type,
+    String? asset,
+    Widget? widget,
+    Function()? suffixAction,
+  }) {
+    switch (type) {
+      case PrefixType.svg:
+        return IconButton(
+          onPressed: suffixAction,
+          icon: SvgPicture.asset(
+            asset ?? 'assets/svgs/close-circle.svg',
+            height: ScreenUtil().setHeight(20),
+            colorFilter: ColorFilter.mode(
+              IFTheme.color.grey,
+              BlendMode.srcIn,
+            ),
+          ),
+        );
+      case PrefixType.widget:
         return widget;
       default:
         return null;

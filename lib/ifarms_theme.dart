@@ -55,6 +55,12 @@ enum SuffixType {
   noSuffix,
 }
 
+enum PrefixType {
+  svg,
+  widget,
+  noSuffix,
+}
+
 enum DialogIconType {
   svg,
   widget,
