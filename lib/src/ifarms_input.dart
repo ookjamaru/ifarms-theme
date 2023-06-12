@@ -72,23 +72,31 @@ class IFInput {
               errorStyle: IFTheme.textStyle.smallReg.copyWith(
                 color: IFTheme.color.red,
               ),
-              prefixIcon: prefixBuilder(
-                type: prefixType,
-                asset: prefixIcon,
-                widget: prefixWidget,
-                prefixAction: prefixAction,
+              prefixIcon: Padding(
+                padding: const EdgeInsets.all(2),
+                child: prefixBuilder(
+                  type: prefixType,
+                  asset: prefixIcon,
+                  widget: prefixWidget,
+                  prefixAction: prefixAction,
+                ),
               ),
-              suffixIcon: suffixBuilder(
-                type: suffixType,
-                asset: suffixIcon,
-                widget: suffixWidget,
-                suffixAction: suffixAction,
+              suffixIcon: Padding(
+                padding: const EdgeInsets.all(2),
+                child: suffixBuilder(
+                  type: suffixType,
+                  asset: suffixIcon,
+                  widget: suffixWidget,
+                  suffixAction: suffixAction,
+                ),
               ),
               alignLabelWithHint: true,
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10.0),
-                borderSide:
-                    BorderSide(width: 1, color: IFTheme.color.lightGrey),
+                borderSide: BorderSide(
+                  width: 1,
+                  color: IFTheme.color.lightGrey,
+                ),
               ),
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10.0),
