@@ -72,23 +72,17 @@ class IFInput {
               errorStyle: IFTheme.textStyle.smallReg.copyWith(
                 color: IFTheme.color.red,
               ),
-              prefixIcon: Padding(
-                padding: const EdgeInsets.all(2),
-                child: prefixBuilder(
-                  type: prefixType,
-                  asset: prefixIcon,
-                  widget: prefixWidget,
-                  prefixAction: prefixAction,
-                ),
+              prefixIcon: prefixBuilder(
+                type: prefixType,
+                asset: prefixIcon,
+                widget: prefixWidget,
+                prefixAction: prefixAction,
               ),
-              suffixIcon: Padding(
-                padding: const EdgeInsets.all(2),
-                child: suffixBuilder(
-                  type: suffixType,
-                  asset: suffixIcon,
-                  widget: suffixWidget,
-                  suffixAction: suffixAction,
-                ),
+              suffixIcon: suffixBuilder(
+                type: suffixType,
+                asset: suffixIcon,
+                widget: suffixWidget,
+                suffixAction: suffixAction,
               ),
               alignLabelWithHint: true,
               border: OutlineInputBorder(
@@ -140,7 +134,10 @@ class IFInput {
           ),
         );
       case SuffixType.widget:
-        return widget;
+        return Padding(
+          padding: const EdgeInsets.all(2.0),
+          child: widget,
+        );
       default:
         return null;
     }
@@ -166,7 +163,10 @@ class IFInput {
           ),
         );
       case PrefixType.widget:
-        return widget;
+        return Padding(
+          padding: const EdgeInsets.all(2.0),
+          child: widget,
+        );
       default:
         return null;
     }
