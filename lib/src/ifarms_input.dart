@@ -33,7 +33,6 @@ class IFInput {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               if (title != null) Text(title, style: IFTheme.textStyle.bodyReg),
               if (!required!)
