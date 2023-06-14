@@ -36,14 +36,14 @@ class IFInput {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               if (title != null) Text(title, style: IFTheme.textStyle.bodyReg),
-              if (required!)
+              if (!required!)
                 Text(
                   '(Jika ada)',
                   style: IFTheme.textStyle.bodyReg.copyWith(
                     color: IFTheme.color.grey,
                   ),
                 ),
-              if (!required)
+              if (required)
                 Text(
                   '*',
                   style: IFTheme.textStyle.bodyReg.copyWith(
