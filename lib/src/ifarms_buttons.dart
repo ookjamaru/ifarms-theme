@@ -8,6 +8,7 @@ class IFButton {
     ButtonMode? mode = ButtonMode.common,
     ButtonIconPosition? iconPosition,
     Widget? icon = const SizedBox.shrink(),
+    MainAxisAlignment? alignment = MainAxisAlignment.center,
     bool noBorder = false,
     bool aligned = false,
     VoidCallback? onPressed,
@@ -96,7 +97,7 @@ class IFButton {
             ),
             onPressed: onPressed,
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: alignment!,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 if (iconPosition == ButtonIconPosition.left)
