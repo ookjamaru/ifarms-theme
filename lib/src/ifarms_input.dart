@@ -65,13 +65,14 @@ class IFInput {
             onTap: onTap,
             onChanged: onChanged,
             obscureText: obscureText,
+            style: IFTheme.textStyle.h2Reg,
             decoration: InputDecoration(
               filled: true,
               fillColor:
                   enabled! ? Colors.transparent : IFTheme.color.lightGrey,
               labelStyle: TextStyle(color: IFTheme.color.black),
               hintText: hint,
-              hintStyle: IFTheme.textStyle.bodyReg.copyWith(
+              hintStyle: IFTheme.textStyle.h2Reg.copyWith(
                 color: IFTheme.color.grey,
               ),
               contentPadding: const EdgeInsets.all(15.0),
