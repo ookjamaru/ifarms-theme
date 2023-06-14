@@ -20,7 +20,7 @@ class IFInput {
     bool? showClearbutton = false,
     bool? readOnly = false,
     bool? enabled = true,
-    bool? required = true,
+    bool? mandatory = false,
     Function()? suffixAction,
     Function()? prefixAction,
     Function()? onTap,
@@ -35,16 +35,16 @@ class IFInput {
           Row(
             children: [
               if (title != null) Text(title, style: IFTheme.textStyle.bodyReg),
-              if (!required!)
+              if (!mandatory!)
                 Text(
-                  '(Jika ada)',
+                  ' (Jika ada)',
                   style: IFTheme.textStyle.bodyReg.copyWith(
                     color: IFTheme.color.grey,
                   ),
                 ),
-              if (required)
+              if (mandatory)
                 Text(
-                  '*',
+                  ' *',
                   style: IFTheme.textStyle.bodyReg.copyWith(
                     color: IFTheme.color.red,
                   ),
