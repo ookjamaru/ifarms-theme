@@ -71,7 +71,7 @@ class IFInput {
                   enabled! ? Colors.transparent : IFTheme.color.lightGrey,
               labelStyle: TextStyle(color: IFTheme.color.black),
               hintText: hint,
-              hintStyle: IFTheme.textStyle.h2Reg.copyWith(
+              hintStyle: IFTheme.textStyle.bodyReg.copyWith(
                 color: IFTheme.color.grey,
               ),
               contentPadding: const EdgeInsets.all(15.0),

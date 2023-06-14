@@ -68,6 +68,9 @@ enum DialogIconType {
 }
 
 class IFTheme {
+  IFTheme._internal();
+  static final _singleton = IFTheme._internal();
+  factory IFTheme() => _singleton;
   static IFTextStyles textStyle = IFTextStyles();
   static IFColor color = IFColor();
   static String fontName = 'DM Sans';
