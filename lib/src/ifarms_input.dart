@@ -185,7 +185,7 @@ class IFInput {
     String? label,
     bool? mandatory = false,
     T? selectedData,
-    required Future<List<T>> getData,
+    required Future<List<T>> Function(String)? getData,
     String? displayedText,
     String? selectedDataText,
     String? hint,
@@ -219,7 +219,7 @@ class IFInput {
         ),
         DropdownSearch<T>(
           selectedItem: selectedData,
-          asyncItems: (text) async => text.isNotEmpty ? await getData : [],
+          asyncItems: getData,
           popupProps: PopupProps.menu(
             showSearchBox: true,
             isFilterOnline: true,
