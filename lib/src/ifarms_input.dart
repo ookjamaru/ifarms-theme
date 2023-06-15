@@ -1,6 +1,6 @@
 part of '../ifarms_theme.dart';
 
-class IFInput<T> {
+class IFInput {
   Widget baseInput({
     String? title,
     String? hint,
@@ -181,7 +181,7 @@ class IFInput<T> {
     }
   }
 
-  dropdownSearchNet({
+  dropdownSearchNet<T>({
     String? label,
     bool? mandatory = false,
     T? selectedData,
