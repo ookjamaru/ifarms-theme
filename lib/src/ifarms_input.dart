@@ -186,9 +186,8 @@ class IFInput {
     bool? mandatory = false,
     required T? selectedData,
     required Future<List<T>> Function(String)? getData,
-    required String? displayedText,
-    required String? selectedDataText,
-    required String? hint,
+    required Widget Function(BuildContext, T, bool)? itemBuilder,
+    required Widget Function(BuildContext, T?)? dropdownBuilder,
     required bool Function(T, T)? compareFn,
     void Function(T?)? onChanged,
   }) {
@@ -269,24 +268,9 @@ class IFInput {
                 ),
               ),
             ),
-            itemBuilder: (context, item, isSelected) {
-              return ListTile(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                selected: isSelected,
-                selectedColor: IFTheme.color.white,
-                selectedTileColor: IFTheme.color.blue,
-                title: Text(displayedText ?? '-'),
-              );
-            },
+            itemBuilder: itemBuilder,
           ),
-          dropdownBuilder: (context, selectedItem) {
-            return Text(
-              selectedDataText ?? hint ?? 'Pilih',
-              style: IFTheme.textStyle.h2Reg,
-            );
-          },
+          dropdownBuilder: dropdownBuilder,
           onChanged: (value) => onChanged,
           compareFn: compareFn,
           dropdownDecoratorProps: DropDownDecoratorProps(
