@@ -182,13 +182,13 @@ class IFInput {
   }
 
   dropdownSearchNet<T>({
-    String? label,
+    required String? label,
     bool? mandatory = false,
-    T? selectedData,
+    required T? selectedData,
     required Future<List<T>> Function(String)? getData,
-    String? displayedText,
-    String? selectedDataText,
-    String? hint,
+    required String? displayedText,
+    required String? selectedDataText,
+    required String? hint,
     required bool Function(T, T)? compareFn,
     void Function(T?)? onChanged,
   }) {
@@ -208,11 +208,11 @@ class IFInput {
                   color: IFTheme.color.red,
                 ),
               ),
-            if (!mandatory)
+            if (label != null && !mandatory)
               Text(
                 ' (Jika ada)',
                 style: IFTheme.textStyle.bodyReg.copyWith(
-                  color: IFTheme.color.red,
+                  color: IFTheme.color.grey,
                 ),
               ),
           ],
