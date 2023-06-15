@@ -447,7 +447,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               controller: inputCtl,
                               title: 'Required input',
                               hint: 'This is hint',
-                              required: true,
+                              mandatory: true,
                               showClearbutton: true,
                               validator: (s) =>
                                   IFTheme.validator.nikValidator(s),
@@ -455,11 +455,11 @@ class _MyHomePageState extends State<MyHomePage> {
                             IFTheme.input.baseInput(
                               title: 'Optional input',
                               showPrefix: true,
-                              required: false,
+                              mandatory: false,
                             ),
                             IFTheme.input.baseInput(
                               title: 'Long text input',
-                              required: false,
+                              mandatory: false,
                               longText: true,
                             ),
                             IFTheme.input.baseInput(

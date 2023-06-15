@@ -69,7 +69,7 @@ class IFInput {
             decoration: InputDecoration(
               filled: true,
               fillColor:
-                  enabled! ? Colors.transparent : IFTheme.color.lightGrey,
+                  enabled! ? IFTheme.color.white : IFTheme.color.lightGrey,
               labelStyle: TextStyle(color: IFTheme.color.black),
               hintText: hint,
               hintStyle: IFTheme.textStyle.bodyReg.copyWith(
