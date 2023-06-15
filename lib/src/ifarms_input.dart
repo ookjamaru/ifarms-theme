@@ -1,14 +1,48 @@
 part of '../ifarms_theme.dart';
 
 class IFInput {
+  final InputDecoration _inputDecoration = InputDecoration(
+    filled: true,
+    labelStyle: TextStyle(color: IFTheme.color.black),
+    hintStyle: IFTheme.textStyle.h2Reg.copyWith(
+      color: IFTheme.color.grey,
+    ),
+    contentPadding: const EdgeInsets.all(15.0),
+    errorStyle: IFTheme.textStyle.smallReg.copyWith(
+      color: IFTheme.color.red,
+    ),
+    alignLabelWithHint: true,
+    fillColor: IFTheme.color.white,
+    border: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(10.0),
+      borderSide: BorderSide(
+        width: 1,
+        color: IFTheme.color.lightGrey,
+      ),
+    ),
+    enabledBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(10.0),
+      borderSide: BorderSide(width: 1, color: IFTheme.color.lightGrey),
+    ),
+    errorBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(10.0),
+      borderSide: BorderSide(width: 1, color: IFTheme.color.red),
+    ),
+    focusedBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(10.0),
+      borderSide: BorderSide(
+        color: IFTheme.color.blue,
+      ),
+    ),
+  );
   Widget baseInput({
     String? title,
     String? hint,
     String? helperText,
     String? initialValue,
-    String? prefixIcon,
+    String? prefix,
     Widget? prefixWidget,
-    String? suffixIcon,
+    String? suffix,
     Widget? suffixWidget,
     TextEditingController? controller,
     FormFieldValidator? validator,
@@ -82,13 +116,13 @@ class IFInput {
               ),
               prefixIcon: prefixBuilder(
                 type: prefixType,
-                asset: prefixIcon,
+                asset: prefix,
                 widget: prefixWidget,
                 prefixAction: prefixAction,
               ),
               suffixIcon: suffixBuilder(
                 type: suffixType,
-                asset: suffixIcon,
+                asset: suffix,
                 widget: suffixWidget,
                 suffixAction: suffixAction,
               ),
@@ -142,6 +176,17 @@ class IFInput {
             ),
           ),
         );
+      case SuffixType.text:
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(5),
+              child: Text(asset ?? ''),
+            ),
+          ],
+        );
       case SuffixType.widget:
         return Padding(
           padding: const EdgeInsets.all(2.0),
@@ -170,6 +215,17 @@ class IFInput {
               BlendMode.srcIn,
             ),
           ),
+        );
+      case PrefixType.text:
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(5.0),
+              child: Text(asset ?? ''),
+            ),
+          ],
         );
       case PrefixType.widget:
         return Padding(
@@ -232,41 +288,7 @@ class IFInput {
               backgroundColor: IFTheme.color.white,
             ),
             searchFieldProps: TextFieldProps(
-              decoration: InputDecoration(
-                filled: true,
-                labelStyle: TextStyle(color: IFTheme.color.black),
-                hintStyle: IFTheme.textStyle.h2Reg.copyWith(
-                  color: IFTheme.color.grey,
-                ),
-                contentPadding: const EdgeInsets.all(15.0),
-                errorStyle: IFTheme.textStyle.smallReg.copyWith(
-                  color: IFTheme.color.red,
-                ),
-                alignLabelWithHint: true,
-                fillColor: IFTheme.color.white,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10.0),
-                  borderSide: BorderSide(
-                    width: 1,
-                    color: IFTheme.color.lightGrey,
-                  ),
-                ),
-                enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10.0),
-                  borderSide:
-                      BorderSide(width: 1, color: IFTheme.color.lightGrey),
-                ),
-                errorBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10.0),
-                  borderSide: BorderSide(width: 1, color: IFTheme.color.red),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10.0),
-                  borderSide: BorderSide(
-                    color: IFTheme.color.blue,
-                  ),
-                ),
-              ),
+              decoration: _inputDecoration,
             ),
             itemBuilder: itemBuilder,
           ),
@@ -274,41 +296,73 @@ class IFInput {
           onChanged: (value) => onChanged,
           compareFn: compareFn,
           dropdownDecoratorProps: DropDownDecoratorProps(
-            dropdownSearchDecoration: InputDecoration(
-              filled: true,
-              labelStyle: TextStyle(color: IFTheme.color.black),
-              hintStyle: IFTheme.textStyle.h2Reg.copyWith(
-                color: IFTheme.color.grey,
+            dropdownSearchDecoration: _inputDecoration,
+          ),
+        ),
+      ],
+    );
+  }
+
+  dropdownSearchNetMulti<T>({
+    required String? label,
+    bool? mandatory = false,
+    required T? selectedData,
+    required Future<List<T>> Function(String)? getData,
+    required Widget Function(BuildContext, T, bool)? itemBuilder,
+    required Widget Function(BuildContext, T?)? dropdownBuilder,
+    required bool Function(T, T)? compareFn,
+    void Function(T?)? onChanged,
+  }) {
+    return Column(
+      children: [
+        Row(
+          children: [
+            if (label != null)
+              Text(
+                label,
+                style: IFTheme.textStyle.bodyReg,
               ),
-              contentPadding: const EdgeInsets.all(15.0),
-              errorStyle: IFTheme.textStyle.smallReg.copyWith(
-                color: IFTheme.color.red,
-              ),
-              alignLabelWithHint: true,
-              fillColor: IFTheme.color.white,
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(10.0),
-                borderSide: BorderSide(
-                  width: 1,
-                  color: IFTheme.color.lightGrey,
+            if (mandatory!)
+              Text(
+                ' *',
+                style: IFTheme.textStyle.bodyReg.copyWith(
+                  color: IFTheme.color.red,
                 ),
               ),
-              enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(10.0),
-                borderSide:
-                    BorderSide(width: 1, color: IFTheme.color.lightGrey),
-              ),
-              errorBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(10.0),
-                borderSide: BorderSide(width: 1, color: IFTheme.color.red),
-              ),
-              focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(10.0),
-                borderSide: BorderSide(
-                  color: IFTheme.color.blue,
+            if (label != null && !mandatory)
+              Text(
+                ' (Jika ada)',
+                style: IFTheme.textStyle.bodyReg.copyWith(
+                  color: IFTheme.color.grey,
                 ),
               ),
+          ],
+        ),
+        DropdownSearch<T>(
+          selectedItem: selectedData,
+          asyncItems: getData,
+          popupProps: PopupProps.menu(
+            showSearchBox: true,
+            isFilterOnline: true,
+            showSelectedItems: true,
+            searchDelay: const Duration(milliseconds: 500),
+            fit: FlexFit.loose,
+            menuProps: MenuProps(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+              ),
+              backgroundColor: IFTheme.color.white,
             ),
+            searchFieldProps: TextFieldProps(
+              decoration: _inputDecoration,
+            ),
+            itemBuilder: itemBuilder,
+          ),
+          dropdownBuilder: dropdownBuilder,
+          onChanged: (value) => onChanged,
+          compareFn: compareFn,
+          dropdownDecoratorProps: DropDownDecoratorProps(
+            dropdownSearchDecoration: _inputDecoration,
           ),
         ),
       ],

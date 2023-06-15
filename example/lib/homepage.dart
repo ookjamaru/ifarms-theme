@@ -458,6 +458,26 @@ class _MyHomePageState extends State<MyHomePage> {
                               mandatory: false,
                             ),
                             IFTheme.input.baseInput(
+                              title: 'Text prefix',
+                              showPrefix: true,
+                              mandatory: false,
+                              prefixType: PrefixType.text,
+                              prefix: 'Rp.',
+                            ),
+                            IFTheme.input.baseInput(
+                              title: 'Text prefix',
+                              mandatory: false,
+                              suffixType: SuffixType.text,
+                              suffix: 'yang akan',
+                            ),
+                            IFTheme.input.baseInput(
+                              title: 'Text prefix',
+                              showPrefix: true,
+                              mandatory: false,
+                              prefixType: PrefixType.text,
+                              prefix: 'Rp.',
+                            ),
+                            IFTheme.input.baseInput(
                               title: 'Long text input',
                               mandatory: false,
                               longText: true,

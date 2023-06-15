@@ -52,12 +52,14 @@ enum DialogType {
 
 enum SuffixType {
   svg,
+  text,
   widget,
   noSuffix,
 }
 
 enum PrefixType {
   svg,
+  text,
   widget,
   noSuffix,
 }
