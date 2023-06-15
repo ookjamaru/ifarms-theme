@@ -1,9 +1,10 @@
 part of '../ifarms_theme.dart';
 
-class IFInput {
+class IFInput<T> {
   Widget baseInput({
     String? title,
     String? hint,
+    String? helperText,
     String? initialValue,
     String? prefixIcon,
     Widget? prefixWidget,
@@ -92,6 +93,7 @@ class IFInput {
                 suffixAction: suffixAction,
               ),
               alignLabelWithHint: true,
+              helperText: helperText,
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10.0),
                 borderSide: BorderSide(
@@ -177,5 +179,155 @@ class IFInput {
       default:
         return null;
     }
+  }
+
+  dropdownSearchNet({
+    String? label,
+    bool? mandatory = false,
+    T? selectedData,
+    required Future<List<T>> getData,
+    String? displayedText,
+    String? selectedDataText,
+    String? hint,
+    required bool Function(T, T)? compareFn,
+    void Function(T?)? onChanged,
+  }) {
+    return Column(
+      children: [
+        Row(
+          children: [
+            if (label != null)
+              Text(
+                label,
+                style: IFTheme.textStyle.bodyReg,
+              ),
+            if (mandatory!)
+              Text(
+                ' *',
+                style: IFTheme.textStyle.bodyReg.copyWith(
+                  color: IFTheme.color.red,
+                ),
+              ),
+            if (!mandatory)
+              Text(
+                ' (Jika ada)',
+                style: IFTheme.textStyle.bodyReg.copyWith(
+                  color: IFTheme.color.red,
+                ),
+              ),
+          ],
+        ),
+        DropdownSearch<T>(
+          selectedItem: selectedData,
+          asyncItems: (text) async => text.isNotEmpty ? await getData : [],
+          popupProps: PopupProps.menu(
+            showSearchBox: true,
+            isFilterOnline: true,
+            showSelectedItems: true,
+            searchDelay: const Duration(milliseconds: 500),
+            fit: FlexFit.loose,
+            menuProps: MenuProps(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+              ),
+              backgroundColor: IFTheme.color.white,
+            ),
+            searchFieldProps: TextFieldProps(
+              decoration: InputDecoration(
+                filled: true,
+                labelStyle: TextStyle(color: IFTheme.color.black),
+                hintStyle: IFTheme.textStyle.h2Reg.copyWith(
+                  color: IFTheme.color.grey,
+                ),
+                contentPadding: const EdgeInsets.all(15.0),
+                errorStyle: IFTheme.textStyle.smallReg.copyWith(
+                  color: IFTheme.color.red,
+                ),
+                alignLabelWithHint: true,
+                fillColor: IFTheme.color.white,
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10.0),
+                  borderSide: BorderSide(
+                    width: 1,
+                    color: IFTheme.color.lightGrey,
+                  ),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10.0),
+                  borderSide:
+                      BorderSide(width: 1, color: IFTheme.color.lightGrey),
+                ),
+                errorBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10.0),
+                  borderSide: BorderSide(width: 1, color: IFTheme.color.red),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10.0),
+                  borderSide: BorderSide(
+                    color: IFTheme.color.blue,
+                  ),
+                ),
+              ),
+            ),
+            itemBuilder: (context, item, isSelected) {
+              return ListTile(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                selected: isSelected,
+                selectedColor: IFTheme.color.white,
+                selectedTileColor: IFTheme.color.blue,
+                title: Text(displayedText ?? '-'),
+              );
+            },
+          ),
+          dropdownBuilder: (context, selectedItem) {
+            return Text(
+              selectedDataText ?? hint ?? 'Pilih',
+              style: IFTheme.textStyle.h2Reg,
+            );
+          },
+          onChanged: (value) => onChanged,
+          compareFn: compareFn,
+          dropdownDecoratorProps: DropDownDecoratorProps(
+            dropdownSearchDecoration: InputDecoration(
+              filled: true,
+              labelStyle: TextStyle(color: IFTheme.color.black),
+              hintStyle: IFTheme.textStyle.h2Reg.copyWith(
+                color: IFTheme.color.grey,
+              ),
+              contentPadding: const EdgeInsets.all(15.0),
+              errorStyle: IFTheme.textStyle.smallReg.copyWith(
+                color: IFTheme.color.red,
+              ),
+              alignLabelWithHint: true,
+              fillColor: IFTheme.color.white,
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10.0),
+                borderSide: BorderSide(
+                  width: 1,
+                  color: IFTheme.color.lightGrey,
+                ),
+              ),
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10.0),
+                borderSide:
+                    BorderSide(width: 1, color: IFTheme.color.lightGrey),
+              ),
+              errorBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10.0),
+                borderSide: BorderSide(width: 1, color: IFTheme.color.red),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10.0),
+                borderSide: BorderSide(
+                  color: IFTheme.color.blue,
+                ),
+              ),
+            ),
+          ),
+        ),
+      ],
+    );
   }
 }
