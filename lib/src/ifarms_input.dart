@@ -182,7 +182,7 @@ class IFInput {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Padding(
-              padding: const EdgeInsets.all(5),
+              padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Text(asset ?? ''),
             ),
           ],
