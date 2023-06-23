@@ -36,6 +36,12 @@ enum ButtonMode {
   text,
 }
 
+enum MandatoryStatus {
+  required,
+  optional,
+  etc,
+}
+
 enum ButtonIconPosition {
   left,
   right,

@@ -447,7 +447,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               controller: inputCtl,
                               title: 'Required input',
                               hint: 'This is hint',
-                              mandatory: true,
+                              mandatory: MandatoryStatus.required,
                               showClearbutton: true,
                               validator: (s) =>
                                   IFTheme.validator.nikValidator(s),
@@ -455,31 +455,31 @@ class _MyHomePageState extends State<MyHomePage> {
                             IFTheme.input.baseInput(
                               title: 'Optional input',
                               showPrefix: true,
-                              mandatory: false,
+                              mandatory: MandatoryStatus.optional,
                             ),
                             IFTheme.input.baseInput(
                               title: 'Text prefix',
                               showPrefix: true,
-                              mandatory: false,
+                              mandatory: MandatoryStatus.optional,
                               prefixType: PrefixType.text,
                               prefix: 'Rp.',
                             ),
                             IFTheme.input.baseInput(
                               title: 'Text prefix',
-                              mandatory: false,
+                              mandatory: MandatoryStatus.optional,
                               suffixType: SuffixType.text,
                               suffix: 'yang akan',
                             ),
                             IFTheme.input.baseInput(
                               title: 'Text prefix',
                               showPrefix: true,
-                              mandatory: false,
+                              mandatory: MandatoryStatus.optional,
                               prefixType: PrefixType.text,
                               prefix: 'Rp.',
                             ),
                             IFTheme.input.baseInput(
                               title: 'Long text input',
-                              mandatory: false,
+                              mandatory: MandatoryStatus.optional,
                               longText: true,
                             ),
                             IFTheme.input.baseInput(
