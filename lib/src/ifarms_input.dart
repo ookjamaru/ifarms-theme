@@ -242,6 +242,7 @@ class IFInput {
   dropdownSearchNet<T>({
     required String? label,
     MandatoryStatus? mandatory = MandatoryStatus.etc,
+    bool? showSearchBox = true,
     required T? selectedData,
     required Future<List<T>> Function(String)? getData,
     required Widget Function(BuildContext, T, bool)? itemBuilder,
@@ -278,7 +279,7 @@ class IFInput {
           selectedItem: selectedData,
           asyncItems: getData,
           popupProps: PopupProps.menu(
-            showSearchBox: true,
+            showSearchBox: showSearchBox!,
             isFilterOnline: true,
             showSelectedItems: true,
             searchDelay: const Duration(milliseconds: 500),
