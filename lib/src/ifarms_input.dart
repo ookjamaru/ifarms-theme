@@ -56,6 +56,7 @@ class IFInput {
     bool? readOnly = false,
     bool? enabled = true,
     MandatoryStatus? mandatory = MandatoryStatus.etc,
+    List<TextInputFormatter>? inputFormatters,
     Function()? suffixAction,
     Function()? prefixAction,
     Function()? onTap,
@@ -101,6 +102,7 @@ class IFInput {
             onChanged: onChanged,
             obscureText: obscureText,
             style: IFTheme.textStyle.bodyReg,
+            inputFormatters: inputFormatters,
             decoration: InputDecoration(
               filled: true,
               fillColor:
