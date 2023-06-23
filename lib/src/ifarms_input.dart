@@ -239,7 +239,7 @@ class IFInput {
 
   dropdownSearchNet<T>({
     required String? label,
-    bool? mandatory = false,
+    MandatoryStatus? mandatory = MandatoryStatus.etc,
     required T? selectedData,
     required Future<List<T>> Function(String)? getData,
     required Widget Function(BuildContext, T, bool)? itemBuilder,
@@ -256,14 +256,14 @@ class IFInput {
                 label,
                 style: IFTheme.textStyle.bodyReg,
               ),
-            if (mandatory!)
+            if (mandatory == MandatoryStatus.optional)
               Text(
                 ' *',
                 style: IFTheme.textStyle.bodyReg.copyWith(
                   color: IFTheme.color.red,
                 ),
               ),
-            if (label != null && !mandatory)
+            if (label != null && mandatory == MandatoryStatus.optional)
               Text(
                 ' (Jika ada)',
                 style: IFTheme.textStyle.bodyReg.copyWith(
