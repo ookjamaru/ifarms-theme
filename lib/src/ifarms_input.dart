@@ -296,7 +296,7 @@ class IFInput {
             itemBuilder: itemBuilder,
           ),
           dropdownBuilder: dropdownBuilder,
-          onChanged: (value) => onChanged,
+          onChanged: onChanged,
           compareFn: compareFn,
           dropdownDecoratorProps: DropDownDecoratorProps(
             dropdownSearchDecoration: _inputDecoration,
@@ -362,7 +362,7 @@ class IFInput {
             itemBuilder: itemBuilder,
           ),
           dropdownBuilder: dropdownBuilder,
-          onChanged: (value) => onChanged,
+          onChanged: onChanged,
           compareFn: compareFn,
           dropdownDecoratorProps: DropDownDecoratorProps(
             dropdownSearchDecoration: _inputDecoration,
