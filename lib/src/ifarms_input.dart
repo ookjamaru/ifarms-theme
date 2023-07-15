@@ -243,6 +243,7 @@ class IFInput {
     required String? label,
     MandatoryStatus? mandatory = MandatoryStatus.etc,
     bool? showSearchBox = true,
+    FormFieldValidator? validator,
     required T? selectedData,
     required Future<List<T>> Function(String)? getData,
     required Widget Function(BuildContext, T, bool)? itemBuilder,
@@ -298,6 +299,7 @@ class IFInput {
           dropdownBuilder: dropdownBuilder,
           onChanged: onChanged,
           compareFn: compareFn,
+          validator: validator,
           dropdownDecoratorProps: DropDownDecoratorProps(
             dropdownSearchDecoration: _inputDecoration,
           ),
@@ -309,6 +311,7 @@ class IFInput {
   dropdownSearchNetMulti<T>({
     required String? label,
     bool? mandatory = false,
+    FormFieldValidator? validator,
     required T? selectedData,
     required Future<List<T>> Function(String)? getData,
     required Widget Function(BuildContext, T, bool)? itemBuilder,
@@ -364,6 +367,7 @@ class IFInput {
           dropdownBuilder: dropdownBuilder,
           onChanged: onChanged,
           compareFn: compareFn,
+          validator: validator,
           dropdownDecoratorProps: DropDownDecoratorProps(
             dropdownSearchDecoration: _inputDecoration,
           ),
