@@ -260,7 +260,7 @@ class IFInput {
                 label,
                 style: IFTheme.textStyle.bodyReg,
               ),
-            if (mandatory == MandatoryStatus.optional)
+            if (mandatory == MandatoryStatus.required)
               Text(
                 ' *',
                 style: IFTheme.textStyle.bodyReg.copyWith(
@@ -310,7 +310,7 @@ class IFInput {
 
   dropdownSearchNetMulti<T>({
     required String? label,
-    bool? mandatory = false,
+    MandatoryStatus? mandatory = MandatoryStatus.etc,
     FormFieldValidator? validator,
     required T? selectedData,
     required Future<List<T>> Function(String)? getData,
@@ -328,14 +328,14 @@ class IFInput {
                 label,
                 style: IFTheme.textStyle.bodyReg,
               ),
-            if (mandatory!)
+            if (mandatory == MandatoryStatus.required)
               Text(
                 ' *',
                 style: IFTheme.textStyle.bodyReg.copyWith(
                   color: IFTheme.color.red,
                 ),
               ),
-            if (label != null && !mandatory)
+            if (label != null && mandatory == MandatoryStatus.optional)
               Text(
                 ' (Jika ada)',
                 style: IFTheme.textStyle.bodyReg.copyWith(
