@@ -311,7 +311,7 @@ class IFInput {
   dropdownSearchNetMulti<T>({
     required String? label,
     MandatoryStatus? mandatory = MandatoryStatus.etc,
-    FormFieldValidator? validator,
+    String? Function(T?)? validator,
     required T? selectedData,
     required Future<List<T>> Function(String)? getData,
     required Widget Function(BuildContext, T, bool)? itemBuilder,
