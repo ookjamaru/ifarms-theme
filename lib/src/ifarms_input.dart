@@ -105,8 +105,7 @@ class IFInput {
             inputFormatters: inputFormatters,
             decoration: InputDecoration(
               filled: true,
-              fillColor:
-                  enabled! ? IFTheme.color.white : IFTheme.color.lightGrey,
+              fillColor: enabled! ? IFTheme.color.white : IFTheme.color.lightGrey,
               labelStyle: TextStyle(color: IFTheme.color.black),
               hintText: hint,
               hintStyle: IFTheme.textStyle.bodyReg.copyWith(
@@ -139,8 +138,7 @@ class IFInput {
               ),
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10.0),
-                borderSide:
-                    BorderSide(width: 1, color: IFTheme.color.lightGrey),
+                borderSide: BorderSide(width: 1, color: IFTheme.color.lightGrey),
               ),
               errorBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10.0),
@@ -244,6 +242,7 @@ class IFInput {
     MandatoryStatus? mandatory = MandatoryStatus.etc,
     bool? showSearchBox = true,
     FormFieldValidator? validator,
+    String? hintText,
     required T? selectedData,
     required Future<List<T>> Function(String)? getData,
     required Widget Function(BuildContext, T, bool)? itemBuilder,
@@ -292,7 +291,7 @@ class IFInput {
               backgroundColor: IFTheme.color.white,
             ),
             searchFieldProps: TextFieldProps(
-              decoration: _inputDecoration,
+              decoration: _inputDecoration.copyWith(hintText: hintText ?? "Cari disini..."),
             ),
             itemBuilder: itemBuilder,
           ),
@@ -312,6 +311,7 @@ class IFInput {
     required String? label,
     MandatoryStatus? mandatory = MandatoryStatus.etc,
     String? Function(T?)? validator,
+    String? hintText,
     required T? selectedData,
     required Future<List<T>> Function(String)? getData,
     required Widget Function(BuildContext, T, bool)? itemBuilder,
@@ -360,7 +360,7 @@ class IFInput {
               backgroundColor: IFTheme.color.white,
             ),
             searchFieldProps: TextFieldProps(
-              decoration: _inputDecoration,
+              decoration: _inputDecoration.copyWith(hintText: hintText ?? "Cari disini..."),
             ),
             itemBuilder: itemBuilder,
           ),

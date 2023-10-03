@@ -1,7 +1,7 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
-export "FLUTTER_ROOT=/Users/tenfifty/tenfifty/Code/SDK/flutter"
-export "FLUTTER_APPLICATION_PATH=/Users/tenfifty/tenfifty/Code/Pupuk Indonesia/ifarms/Flutter/pi-ifarms-mobile-theme/ifarms_theme"
+export "FLUTTER_ROOT=/Users/tenfifty/fvm/versions/3.13.5"
+export "FLUTTER_APPLICATION_PATH=/Users/tenfifty/tenfifty/Code/Pupuk Indonesia/ifarms/Flutter/ifarms_theme"
 export "COCOAPODS_PARALLEL_CODE_SIGN=true"
 export "FLUTTER_TARGET=lib/main.dart"
 export "FLUTTER_BUILD_DIR=build"

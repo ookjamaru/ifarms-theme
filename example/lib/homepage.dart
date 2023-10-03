@@ -449,8 +449,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               hint: 'This is hint',
                               mandatory: MandatoryStatus.required,
                               showClearbutton: true,
-                              validator: (s) =>
-                                  IFTheme.validator.nikValidator(s),
+                              validator: (s) => IFTheme.validator.nikValidator(s),
                             ),
                             IFTheme.input.baseInput(
                               title: 'Optional input',

@@ -1,6 +1,6 @@
 // This is a generated file; do not edit or check into version control.
-FLUTTER_ROOT=/Users/tenfifty/tenfifty/Code/SDK/flutter
-FLUTTER_APPLICATION_PATH=/Users/tenfifty/tenfifty/Code/Pupuk Indonesia/ifarms/Flutter/pi-ifarms-mobile-theme/ifarms_theme
+FLUTTER_ROOT=/Users/tenfifty/fvm/versions/3.13.5
+FLUTTER_APPLICATION_PATH=/Users/tenfifty/tenfifty/Code/Pupuk Indonesia/ifarms/Flutter/ifarms_theme
 COCOAPODS_PARALLEL_CODE_SIGN=true
 FLUTTER_TARGET=lib/main.dart
 FLUTTER_BUILD_DIR=build
