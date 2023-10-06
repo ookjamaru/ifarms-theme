@@ -168,7 +168,7 @@ class IFInput {
         return IconButton(
           onPressed: suffixAction,
           icon: SvgPicture.asset(
-            asset ?? 'assets/svgs/close-circle.svg',
+            asset ?? 'assets/common/svgs/close-circle.svg',
             height: ScreenUtil().setHeight(20),
             colorFilter: ColorFilter.mode(
               IFTheme.color.grey,
@@ -208,7 +208,7 @@ class IFInput {
         return IconButton(
           onPressed: prefixAction,
           icon: SvgPicture.asset(
-            asset ?? 'assets/svgs/close-circle.svg',
+            asset ?? 'assets/common/svgs/close-circle.svg',
             height: ScreenUtil().setHeight(20),
             colorFilter: ColorFilter.mode(
               IFTheme.color.grey,

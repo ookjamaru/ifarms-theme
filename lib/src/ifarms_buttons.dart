@@ -18,7 +18,7 @@ class IFButton {
     }
     if (icon == null && iconPosition != null) {
       icon = SvgPicture.asset(
-        'assets/svgs/plus-outlined.svg',
+        'assets/common/svgs/plus-outlined.svg',
         colorFilter: ColorFilter.mode(
           _iconColor(type!),
           BlendMode.srcIn,
@@ -34,9 +34,7 @@ class IFButton {
             icon: icon!,
             style: ButtonStyle(
               backgroundColor: MaterialStateProperty.all(
-                type == ButtonType.text
-                    ? Colors.transparent
-                    : _buttonColor(type!),
+                type == ButtonType.text ? Colors.transparent : _buttonColor(type!),
               ),
               iconColor: MaterialStateProperty.all(
                 _iconColor(type!),
@@ -60,9 +58,7 @@ class IFButton {
             mini: true,
             elevation: 0,
             onPressed: onPressed,
-            backgroundColor: type == ButtonType.text
-                ? Colors.transparent
-                : _buttonColor(type!),
+            backgroundColor: type == ButtonType.text ? Colors.transparent : _buttonColor(type!),
             foregroundColor: _iconColor(type!),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
@@ -82,9 +78,7 @@ class IFButton {
           child: MaterialButton(
             minWidth: 45,
             elevation: 0,
-            color: mode == ButtonMode.text
-                ? IFTheme.color.white.withAlpha(9)
-                : _buttonColor(type!),
+            color: mode == ButtonMode.text ? IFTheme.color.white.withAlpha(9) : _buttonColor(type!),
             disabledColor: _buttonColor(type!),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
@@ -109,9 +103,7 @@ class IFButton {
                 if (label != null)
                   Text(
                     label,
-                    style: mode == ButtonMode.large
-                        ? IFTheme.textStyle.h2Reg
-                        : _textStyle(type),
+                    style: mode == ButtonMode.large ? IFTheme.textStyle.h2Reg : _textStyle(type),
                   ),
                 if (aligned) const Spacer(),
                 if (iconPosition == ButtonIconPosition.center)
@@ -133,7 +125,7 @@ class IFButton {
 
   Widget setDefaultIcon() {
     return SvgPicture.asset(
-      'assets/svgs/plus-outlined.svg',
+      'assets/common/svgs/plus-outlined.svg',
       colorFilter: ColorFilter.mode(
         IFTheme.color.white,
         BlendMode.srcIn,

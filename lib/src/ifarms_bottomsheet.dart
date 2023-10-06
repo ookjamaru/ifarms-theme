@@ -55,7 +55,7 @@ class IFBtmSheet {
             mode: ButtonMode.circle,
             noBorder: true,
             icon: SvgPicture.asset(
-              'assets/svgs/close-circle.svg',
+              'assets/common/svgs/close-circle.svg',
               height: 25,
             ),
             onPressed: () => Navigator.pop(context),

@@ -95,8 +95,7 @@ class IFDialog {
     }
   }
 
-  Widget iconBuilder(DialogIconType customIcontype,
-      {String? customIcon, Widget? customWidget}) {
+  Widget iconBuilder(DialogIconType customIcontype, {String? customIcon, Widget? customWidget}) {
     switch (customIcontype) {
       case DialogIconType.svg:
         return customIcon != null
@@ -104,11 +103,11 @@ class IFDialog {
                 customIcon,
                 height: ScreenUtil().setHeight(40),
               )
-            : SvgPicture.asset('assets/svgs/info.svg');
+            : SvgPicture.asset('assets/common/svgs/info.svg');
       case DialogIconType.widget:
         return customWidget ?? const SizedBox.shrink();
       default:
-        return SvgPicture.asset('assets/svgs/info.svg');
+        return SvgPicture.asset('assets/common/svgs/info.svg');
     }
   }
 }
