@@ -278,13 +278,13 @@ class IFInput {
         DropdownSearch<T>(
           selectedItem: selectedData,
           asyncItems: getData,
-          popupProps: PopupProps.bottomSheet(
+          popupProps: PopupProps.menu(
             showSearchBox: showSearchBox!,
             isFilterOnline: true,
             showSelectedItems: true,
             searchDelay: const Duration(milliseconds: 500),
             fit: FlexFit.loose,
-            bottomSheetProps: BottomSheetProps(
+            menuProps: MenuProps(
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20),
               ),
