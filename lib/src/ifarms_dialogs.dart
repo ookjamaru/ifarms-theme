@@ -55,9 +55,7 @@ class IFDialog {
                   onPressed: onCancel ?? () => Navigator.pop(context),
                 ),
               ),
-              SizedBox(
-                width: ScreenUtil().setWidth(20),
-              ),
+              const SizedBox(width: 20),
               Expanded(
                 child: IFTheme.button.baseButton(
                   label: confirmLabel!,
@@ -98,12 +96,7 @@ class IFDialog {
   Widget iconBuilder(DialogIconType customIcontype, {String? customIcon, Widget? customWidget}) {
     switch (customIcontype) {
       case DialogIconType.svg:
-        return customIcon != null
-            ? SvgPicture.asset(
-                customIcon,
-                height: ScreenUtil().setHeight(40),
-              )
-            : SvgPicture.asset('assets/common/svgs/info.svg');
+        return customIcon != null ? SvgPicture.asset(customIcon, height: 40) : SvgPicture.asset('assets/common/svgs/info.svg');
       case DialogIconType.widget:
         return customWidget ?? const SizedBox.shrink();
       default:

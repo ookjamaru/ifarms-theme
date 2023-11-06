@@ -19,7 +19,7 @@ class IFBtmSheet {
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             children: [
-              if (large!) SizedBox(height: ScreenUtil().setHeight(40)),
+              if (large!) const SizedBox(height: 40),
               Center(
                 child: FractionallySizedBox(
                   widthFactor: 0.25,
@@ -43,7 +43,7 @@ class IFBtmSheet {
                   child: widget!,
                 ),
               ),
-              SizedBox(height: ScreenUtil().setHeight(20)),
+              const SizedBox(height: 20),
             ],
           ),
         ),

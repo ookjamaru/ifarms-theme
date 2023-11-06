@@ -169,7 +169,7 @@ class IFInput {
           onPressed: suffixAction,
           icon: SvgPicture.asset(
             asset ?? 'assets/common/svgs/close-circle.svg',
-            height: ScreenUtil().setHeight(20),
+            height: 20,
             colorFilter: ColorFilter.mode(
               IFTheme.color.grey,
               BlendMode.srcIn,
@@ -209,7 +209,7 @@ class IFInput {
           onPressed: prefixAction,
           icon: SvgPicture.asset(
             asset ?? 'assets/common/svgs/close-circle.svg',
-            height: ScreenUtil().setHeight(20),
+            height: 20,
             colorFilter: ColorFilter.mode(
               IFTheme.color.grey,
               BlendMode.srcIn,
