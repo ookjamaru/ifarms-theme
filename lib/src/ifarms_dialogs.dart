@@ -14,71 +14,76 @@ class IFDialog {
     VoidCallback? onCancel,
     VoidCallback? onConfirm,
   }) {
-    return AlertDialog(
-      insetPadding: const EdgeInsets.symmetric(horizontal: 20),
-      backgroundColor: IFTheme.color.white,
-      surfaceTintColor: IFTheme.color.white,
-      iconPadding: const EdgeInsets.only(
-        top: 30,
-        bottom: 15,
-        left: 30,
-        right: 30,
+    return ConstrainedBox(
+      constraints: BoxConstraints(
+        minWidth: MediaQuery.of(context).size.shortestSide > 550 ? 500 : (MediaQuery.of(context).size.width - 40),
       ),
-      titlePadding: const EdgeInsets.all(10),
-      contentPadding: const EdgeInsets.all(10),
-      titleTextStyle: IFTheme.textStyle.h1BoldBlack,
-      contentTextStyle: IFTheme.textStyle.bodyReg,
-      alignment: Alignment.center,
-      actionsPadding: const EdgeInsets.all(10),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-      icon: iconBuilder(
-        iconType!,
-        customIcon: customIcon,
-        customWidget: customIconWidget,
-      ),
-      title: Text(title!),
-      content: description == null
-          ? null
-          : Text(
-              description,
-              textAlign: TextAlign.center,
+      child: AlertDialog(
+        insetPadding: const EdgeInsets.symmetric(horizontal: 20),
+        backgroundColor: IFTheme.color.white,
+        surfaceTintColor: IFTheme.color.white,
+        iconPadding: const EdgeInsets.only(
+          top: 30,
+          bottom: 15,
+          left: 30,
+          right: 30,
+        ),
+        titlePadding: const EdgeInsets.all(10),
+        contentPadding: const EdgeInsets.all(10),
+        titleTextStyle: IFTheme.textStyle.h1BoldBlack,
+        contentTextStyle: IFTheme.textStyle.bodyReg,
+        alignment: Alignment.center,
+        actionsPadding: const EdgeInsets.all(10),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        icon: iconBuilder(
+          iconType!,
+          customIcon: customIcon,
+          customWidget: customIconWidget,
+        ),
+        title: Text(title!),
+        content: description == null
+            ? null
+            : Text(
+                description,
+                textAlign: TextAlign.center,
+              ),
+        actions: [
+          if (type != DialogType.info && type != DialogType.noAction)
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Expanded(
+                  child: IFTheme.button.baseButton(
+                    label: cancelLabel!,
+                    type: ButtonType.outline,
+                    onPressed: onCancel ?? () => Navigator.pop(context),
+                  ),
+                ),
+                const SizedBox(width: 20),
+                Expanded(
+                  child: IFTheme.button.baseButton(
+                    label: confirmLabel!,
+                    type: _confirmButtonType(type!),
+                    onPressed: onConfirm,
+                  ),
+                )
+              ],
             ),
-      actions: [
-        if (type != DialogType.info && type != DialogType.noAction)
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Expanded(
-                child: IFTheme.button.baseButton(
-                  label: cancelLabel!,
-                  type: ButtonType.outline,
-                  onPressed: onCancel ?? () => Navigator.pop(context),
+          if (type == DialogType.info)
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Expanded(
+                  child: IFTheme.button.baseButton(
+                    label: cancelLabel!,
+                    type: ButtonType.outline,
+                    onPressed: onCancel ?? () => Navigator.pop(context),
+                  ),
                 ),
-              ),
-              const SizedBox(width: 20),
-              Expanded(
-                child: IFTheme.button.baseButton(
-                  label: confirmLabel!,
-                  type: _confirmButtonType(type!),
-                  onPressed: onConfirm,
-                ),
-              )
-            ],
-          ),
-        if (type == DialogType.info)
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Expanded(
-                child: IFTheme.button.baseButton(
-                  label: cancelLabel!,
-                  type: ButtonType.outline,
-                  onPressed: onCancel ?? () => Navigator.pop(context),
-                ),
-              ),
-            ],
-          ),
-      ],
+              ],
+            ),
+        ],
+      ),
     );
   }
 
