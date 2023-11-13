@@ -46,6 +46,7 @@ class IFInput {
     Widget? suffixWidget,
     TextEditingController? controller,
     FormFieldValidator? validator,
+    FocusNode? focusNode,
     SuffixType? suffixType = SuffixType.noSuffix,
     PrefixType? prefixType = PrefixType.noSuffix,
     int? maxLength,
@@ -103,6 +104,7 @@ class IFInput {
             obscureText: obscureText,
             style: IFTheme.textStyle.bodyReg,
             inputFormatters: inputFormatters,
+            focusNode: focusNode,
             decoration: InputDecoration(
               filled: true,
               fillColor: enabled! ? IFTheme.color.white : IFTheme.color.lightGrey,
