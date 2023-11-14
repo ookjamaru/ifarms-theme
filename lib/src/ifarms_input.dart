@@ -58,6 +58,7 @@ class IFInput {
     bool? readOnly = false,
     bool? enabled = true,
     MandatoryStatus? mandatory = MandatoryStatus.etc,
+    TextCapitalization textCapitalization = TextCapitalization.none,
     List<TextInputFormatter>? inputFormatters,
     Function()? suffixAction,
     Function()? prefixAction,
@@ -105,6 +106,7 @@ class IFInput {
             onChanged: onChanged,
             obscureText: obscureText,
             style: IFTheme.textStyle.bodyReg,
+            textCapitalization: textCapitalization,
             inputFormatters: inputFormatters,
             focusNode: focusNode,
             decoration: InputDecoration(
