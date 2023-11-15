@@ -59,6 +59,7 @@ class IFInput {
     bool? enabled = true,
     MandatoryStatus? mandatory = MandatoryStatus.etc,
     TextCapitalization textCapitalization = TextCapitalization.none,
+    TextInputAction textInputAction = TextInputAction.next,
     List<TextInputFormatter>? inputFormatters,
     Function()? suffixAction,
     Function()? prefixAction,
@@ -109,6 +110,7 @@ class IFInput {
             textCapitalization: textCapitalization,
             inputFormatters: inputFormatters,
             focusNode: focusNode,
+            textInputAction: textInputAction,
             decoration: InputDecoration(
               filled: true,
               fillColor: enabled! ? IFTheme.color.white : IFTheme.color.lightGrey,
