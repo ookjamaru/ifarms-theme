@@ -260,6 +260,7 @@ class IFInput {
     required bool Function(T item1, T item2)? compareFn,
     Widget Function(BuildContext context, String searchEntry, dynamic exception)? errorBuilder,
     Widget Function(BuildContext context, String searchEntry)? emptyBuilder,
+    Widget Function(BuildContext context, String searchEntry)? loadingBuilder,
     void Function(T? value)? onChanged,
   }) {
     return Column(
@@ -305,19 +306,7 @@ class IFInput {
             searchFieldProps: TextFieldProps(
               decoration: _inputDecoration.copyWith(hintText: hintText ?? "Cari disini..."),
             ),
-            loadingBuilder: (context, searchEntry) => Center(
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.transparent,
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                padding: EdgeInsets.zero,
-                child: CupertinoActivityIndicator(
-                  radius: 15,
-                  color: IFTheme.color.blue,
-                ),
-              ),
-            ),
+            loadingBuilder: loadingBuilder,
             errorBuilder: errorBuilder,
             emptyBuilder: emptyBuilder,
             itemBuilder: itemBuilder,
