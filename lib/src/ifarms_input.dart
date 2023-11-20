@@ -258,6 +258,8 @@ class IFInput {
     required Widget Function(BuildContext, T, bool)? itemBuilder,
     required Widget Function(BuildContext, T?)? dropdownBuilder,
     required bool Function(T, T)? compareFn,
+    Widget Function(BuildContext, String, dynamic)? errorBuilder,
+    Widget Function(BuildContext, String)? emptyBuilder,
     void Function(T?)? onChanged,
   }) {
     return Column(
@@ -303,6 +305,8 @@ class IFInput {
             searchFieldProps: TextFieldProps(
               decoration: _inputDecoration.copyWith(hintText: hintText ?? "Cari disini..."),
             ),
+            errorBuilder: errorBuilder,
+            emptyBuilder: emptyBuilder,
             itemBuilder: itemBuilder,
           ),
           dropdownBuilder: dropdownBuilder,
