@@ -176,7 +176,7 @@ class IFButton {
       case ButtonType.warning:
         return IFTheme.textStyle.h2Reg.copyWith(color: IFTheme.color.black);
       case ButtonType.outline:
-        return IFTheme.textStyle.h2Reg.copyWith(color: IFTheme.color.blue);
+        return IFTheme.textStyle.h2Reg.copyWith(color: IFTheme.color.black);
       case ButtonType.outlineGreen:
         return IFTheme.textStyle.h2Reg.copyWith(color: IFTheme.color.green);
       case ButtonType.outlineRed:
