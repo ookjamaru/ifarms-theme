@@ -305,6 +305,19 @@ class IFInput {
             searchFieldProps: TextFieldProps(
               decoration: _inputDecoration.copyWith(hintText: hintText ?? "Cari disini..."),
             ),
+            loadingBuilder: (context, searchEntry) => Center(
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.transparent,
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                padding: EdgeInsets.zero,
+                child: CupertinoActivityIndicator(
+                  radius: 15,
+                  color: IFTheme.color.blue,
+                ),
+              ),
+            ),
             errorBuilder: errorBuilder,
             emptyBuilder: emptyBuilder,
             itemBuilder: itemBuilder,
