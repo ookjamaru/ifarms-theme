@@ -254,13 +254,13 @@ class IFInput {
     FormFieldValidator? validator,
     String? hintText,
     required T? selectedData,
-    required Future<List<T>> Function(String)? getData,
-    required Widget Function(BuildContext, T, bool)? itemBuilder,
-    required Widget Function(BuildContext, T?)? dropdownBuilder,
-    required bool Function(T, T)? compareFn,
-    Widget Function(BuildContext, String, dynamic)? errorBuilder,
-    Widget Function(BuildContext, String)? emptyBuilder,
-    void Function(T?)? onChanged,
+    required Future<List<T>> Function(String keyword)? getData,
+    required Widget Function(BuildContext context, T item, bool isSelected)? itemBuilder,
+    required Widget Function(BuildContext context, T? selectedItem)? dropdownBuilder,
+    required bool Function(T item1, T item2)? compareFn,
+    Widget Function(BuildContext context, String searchEntry, dynamic exception)? errorBuilder,
+    Widget Function(BuildContext context, String searchEntry)? emptyBuilder,
+    void Function(T? value)? onChanged,
   }) {
     return Column(
       children: [
