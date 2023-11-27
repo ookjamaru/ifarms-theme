@@ -335,6 +335,7 @@ class IFInput {
     Widget Function(BuildContext context, String searchEntry, dynamic exception)? errorBuilder,
     Widget Function(BuildContext context, String searchEntry)? emptyBuilder,
     Widget Function(BuildContext context, String searchEntry)? loadingBuilder,
+    Widget Function(BuildContext context, T item, bool isSelected)? selectionWidget,
     required bool Function(T model1, T model2)? compareFn,
     void Function(List<T>)? onChanged,
   }) {
@@ -365,6 +366,7 @@ class IFInput {
         ),
         DropdownSearch<T>.multiSelection(
           selectedItems: selectedItems,
+          clearButtonProps: const ClearButtonProps(icon: Icon(Icons.delete)),
           asyncItems: getData,
           popupProps: PopupPropsMultiSelection.bottomSheet(
             showSearchBox: true,
@@ -384,6 +386,7 @@ class IFInput {
             searchFieldProps: TextFieldProps(
               decoration: _inputDecoration.copyWith(hintText: hintText ?? "Cari disini..."),
             ),
+            selectionWidget: selectionWidget,
             itemBuilder: itemBuilder,
             errorBuilder: errorBuilder,
             emptyBuilder: emptyBuilder,
