@@ -329,11 +329,14 @@ class IFInput {
     String? Function(T?)? validator,
     String? hintText,
     required T? selectedData,
-    required Future<List<T>> Function(String)? getData,
+    required Future<List<T>> Function(String keyword)? getData,
     required Widget Function(BuildContext, T, bool)? itemBuilder,
     required Widget Function(BuildContext, T?)? dropdownBuilder,
-    required bool Function(T, T)? compareFn,
-    void Function(T?)? onChanged,
+    Widget Function(BuildContext context, String searchEntry, dynamic exception)? errorBuilder,
+    Widget Function(BuildContext context, String searchEntry)? emptyBuilder,
+    Widget Function(BuildContext context, String searchEntry)? loadingBuilder,
+    required bool Function(T model1, T model2)? compareFn,
+    void Function(T? value)? onChanged,
   }) {
     return Column(
       children: [
@@ -379,6 +382,9 @@ class IFInput {
               decoration: _inputDecoration.copyWith(hintText: hintText ?? "Cari disini..."),
             ),
             itemBuilder: itemBuilder,
+            errorBuilder: errorBuilder,
+            emptyBuilder: emptyBuilder,
+            loadingBuilder: loadingBuilder,
           ),
           dropdownBuilder: dropdownBuilder,
           onChanged: onChanged,
