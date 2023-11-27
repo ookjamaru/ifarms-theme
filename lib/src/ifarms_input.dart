@@ -366,15 +366,18 @@ class IFInput {
         DropdownSearch<T>.multiSelection(
           selectedItems: selectedItems,
           asyncItems: getData,
-          popupProps: PopupPropsMultiSelection.menu(
+          popupProps: PopupPropsMultiSelection.bottomSheet(
             showSearchBox: true,
             isFilterOnline: true,
             showSelectedItems: true,
             searchDelay: const Duration(milliseconds: 500),
             fit: FlexFit.loose,
-            menuProps: MenuProps(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20),
+            bottomSheetProps: BottomSheetProps(
+              shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(10),
+                  topRight: Radius.circular(10),
+                ),
               ),
               backgroundColor: IFTheme.color.white,
             ),
