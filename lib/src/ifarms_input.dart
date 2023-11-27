@@ -326,17 +326,17 @@ class IFInput {
   dropdownSearchNetMulti<T>({
     required String? label,
     MandatoryStatus? mandatory = MandatoryStatus.etc,
-    String? Function(T?)? validator,
+    String? Function(List<T>?)? validator,
     String? hintText,
-    required T? selectedData,
+    List<T> selectedItems = const [],
     required Future<List<T>> Function(String keyword)? getData,
     required Widget Function(BuildContext, T, bool)? itemBuilder,
-    required Widget Function(BuildContext, T?)? dropdownBuilder,
+    required Widget Function(BuildContext, List<T>) dropdownBuilder,
     Widget Function(BuildContext context, String searchEntry, dynamic exception)? errorBuilder,
     Widget Function(BuildContext context, String searchEntry)? emptyBuilder,
     Widget Function(BuildContext context, String searchEntry)? loadingBuilder,
     required bool Function(T model1, T model2)? compareFn,
-    void Function(T? value)? onChanged,
+    void Function(List<T>)? onChanged,
   }) {
     return Column(
       children: [
@@ -363,10 +363,10 @@ class IFInput {
               ),
           ],
         ),
-        DropdownSearch<T>(
-          selectedItem: selectedData,
+        DropdownSearch<T>.multiSelection(
+          selectedItems: selectedItems,
           asyncItems: getData,
-          popupProps: PopupProps.menu(
+          popupProps: PopupPropsMultiSelection.menu(
             showSearchBox: true,
             isFilterOnline: true,
             showSelectedItems: true,
