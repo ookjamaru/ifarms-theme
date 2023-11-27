@@ -304,6 +304,7 @@ class IFInput {
               backgroundColor: IFTheme.color.white,
             ),
             searchFieldProps: TextFieldProps(
+              padding: const EdgeInsets.all(5),
               decoration: _inputDecoration.copyWith(hintText: hintText ?? "Cari disini..."),
             ),
             loadingBuilder: loadingBuilder,
