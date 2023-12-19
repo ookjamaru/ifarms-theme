@@ -50,8 +50,9 @@ class IFInput {
     bool autoFocus = false,
     SuffixType? suffixType = SuffixType.noSuffix,
     PrefixType? prefixType = PrefixType.noSuffix,
+    int? maxLines,
     int? maxLength,
-    bool? obscureText = false,
+    bool obscureText = false,
     bool? longText = false,
     bool? showPrefix = false,
     bool? showClearbutton = false,
@@ -94,7 +95,7 @@ class IFInput {
           ),
           // Test
           TextFormField(
-            maxLines: obscureText! ? 1 : 5,
+            maxLines: maxLines ?? 5,
             minLines: longText! ? 5 : 1,
             maxLength: maxLength,
             maxLengthEnforcement: maxLengthEnforcement,
