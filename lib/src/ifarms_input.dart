@@ -97,7 +97,7 @@ class IFInput {
           ),
           // Test
           TextFormField(
-            maxLines: maxLines ?? 5,
+            maxLines: obscureText ? 1 : maxLines ?? 5,
             minLines: longText! ? 5 : 1,
             maxLength: maxLength,
             enableSuggestions: enableSuggestion,
