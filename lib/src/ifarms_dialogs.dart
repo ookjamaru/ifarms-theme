@@ -84,6 +84,8 @@ class IFDialog {
 
   ButtonType _confirmButtonType(DialogType type) {
     switch (type) {
+      case DialogType.success:
+        return ButtonType.success;
       case DialogType.warning:
         return ButtonType.warning;
       case DialogType.danger:

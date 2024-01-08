@@ -53,6 +53,7 @@ enum DialogType {
   primary,
   info,
   warning,
+  success,
   danger,
   noAction,
 }
