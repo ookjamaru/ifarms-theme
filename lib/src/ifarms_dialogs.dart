@@ -67,13 +67,24 @@ class IFDialog {
           ),
         if (type == DialogType.info)
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Expanded(
                 child: IFTheme.button.baseButton(
                   label: cancelLabel!,
                   type: ButtonType.outline,
                   onPressed: onCancel ?? () => Navigator.pop(context),
+                ),
+              ),
+            ],
+          ),
+        if (type == DialogType.singleAction)
+          Row(
+            children: [
+              Expanded(
+                child: IFTheme.button.baseButton(
+                  label: confirmLabel!,
+                  type: ButtonType.primary,
+                  onPressed: onConfirm ?? () => Navigator.pop(context),
                 ),
               ),
             ],

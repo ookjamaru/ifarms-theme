@@ -55,6 +55,7 @@ enum DialogType {
   warning,
   success,
   danger,
+  singleAction,
   noAction,
 }
 
