@@ -240,7 +240,8 @@ class IFInput {
   dropdownSearchNet<T>({
     required String? label,
     MandatoryStatus? mandatory = MandatoryStatus.etc,
-    bool? showSearchBox = true,
+    bool showSearchBox = true,
+    bool enable = true,
     FormFieldValidator? validator,
     String? hintText,
     required T? selectedData,
@@ -278,8 +279,9 @@ class IFInput {
         DropdownSearch<T>(
           selectedItem: selectedData,
           asyncItems: getData,
+          enabled: enable,
           popupProps: PopupProps.menu(
-            showSearchBox: showSearchBox!,
+            showSearchBox: showSearchBox,
             isFilterOnline: true,
             showSelectedItems: true,
             searchDelay: const Duration(milliseconds: 500),
